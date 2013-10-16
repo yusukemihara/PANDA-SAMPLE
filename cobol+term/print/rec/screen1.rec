@@ -1,0 +1,10 @@
+screen1 {
+	fixed1 {
+		pandaprint1 {
+			item {
+				path		varchar(256);
+				title	varchar(256);
+			}[10];
+		};
+	};
+};

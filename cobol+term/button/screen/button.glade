@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<GTK-Interface>
+
+<project>
+  <name>Button</name>
+  <program_name>button</program_name>
+  <directory></directory>
+  <pixmaps_directory>pixmaps</pixmaps_directory>
+  <gnome_support>True</gnome_support>
+  <gtkpanda_support>True</gtkpanda_support>
+</project>
+
+<widget>
+  <class>GtkWindow</class>
+  <name>button</name>
+  <signal>
+    <name>map_event</name>
+    <handler>map_event</handler>
+    <last_modification_time>Fri, 25 Jan 2008 05:53:18 GMT</last_modification_time>
+  </signal>
+  <signal>
+    <name>set_focus</name>
+    <handler>set_focus</handler>
+    <last_modification_time>Fri, 25 Jan 2008 05:53:18 GMT</last_modification_time>
+  </signal>
+  <signal>
+    <name>destroy</name>
+    <handler>destroy</handler>
+    <last_modification_time>Fri, 25 Jan 2008 05:53:18 GMT</last_modification_time>
+  </signal>
+  <title>window1</title>
+  <type>GTK_WINDOW_TOPLEVEL</type>
+  <position>GTK_WIN_POS_NONE</position>
+  <modal>False</modal>
+  <allow_shrink>False</allow_shrink>
+  <allow_grow>True</allow_grow>
+  <auto_shrink>False</auto_shrink>
+
+  <widget>
+    <class>GtkHBox</class>
+    <name>hbox1</name>
+    <homogeneous>False</homogeneous>
+    <spacing>0</spacing>
+
+    <widget>
+      <class>GtkToggleButton</class>
+      <name>togglebutton1</name>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<data>toggled</data>
+	<last_modification_time>Mon, 28 Jan 2008 07:14:30 GMT</last_modification_time>
+      </signal>
+      <label>togglebutton1</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+      <active>False</active>
+      <child>
+	<padding>0</padding>
+	<expand>False</expand>
+	<fill>False</fill>
+      </child>
+    </widget>
+
+    <widget>
+      <class>GtkLabel</class>
+      <name>label1</name>
+      <label>label</label>
+      <justify>GTK_JUSTIFY_CENTER</justify>
+      <wrap>False</wrap>
+      <xalign>0.5</xalign>
+      <yalign>0.5</yalign>
+      <xpad>0</xpad>
+      <ypad>0</ypad>
+      <child>
+	<padding>0</padding>
+	<expand>False</expand>
+	<fill>False</fill>
+      </child>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button2</name>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<data>clicked</data>
+	<last_modification_time>Mon, 28 Jan 2008 05:49:37 GMT</last_modification_time>
+      </signal>
+      <label>button2</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+      <child>
+	<padding>0</padding>
+	<expand>False</expand>
+	<fill>False</fill>
+      </child>
+    </widget>
+
+    <widget>
+      <class>GtkCheckButton</class>
+      <name>checkbutton1</name>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>toggled</name>
+	<handler>send_event</handler>
+	<after>True</after>
+	<data>toggled</data>
+	<last_modification_time>Mon, 28 Jan 2008 07:19:36 GMT</last_modification_time>
+      </signal>
+      <label>button3</label>
+      <active>False</active>
+      <draw_indicator>True</draw_indicator>
+      <child>
+	<padding>0</padding>
+	<expand>False</expand>
+	<fill>False</fill>
+      </child>
+    </widget>
+
+    <widget>
+      <class>GtkToggleButton</class>
+      <name>togglebutton2</name>
+      <can_focus>True</can_focus>
+      <label>togglebutton2</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+      <active>False</active>
+      <child>
+	<padding>0</padding>
+	<expand>False</expand>
+	<fill>False</fill>
+      </child>
+    </widget>
+  </widget>
+</widget>
+
+</GTK-Interface>

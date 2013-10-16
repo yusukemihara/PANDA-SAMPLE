@@ -1,0 +1,14 @@
+= window titleを変更するデモプログラム
+
+ボタンを押すとタイトルを変更する。
+
+= 動作方法
+
+== 起動
+
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean

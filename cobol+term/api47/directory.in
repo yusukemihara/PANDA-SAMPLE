@@ -1,0 +1,27 @@
+name    api47;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+wfc {
+    port      ":9001";
+};
+
+blob {
+	space	"=/blob";
+	port	"/tmp/sysdata";
+};
+
+db_group "work" {
+	type	"NativeBLOB";
+};
+
+
+ld {
+	api47	1;
+};

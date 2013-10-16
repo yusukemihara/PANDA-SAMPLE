@@ -1,0 +1,35 @@
+window1	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+		pandaentry1	{
+			value	varchar(256);
+		};
+		pandaentry2	{
+			value	varchar(256);
+		};
+		pandaentry3	{
+			value	varchar(256);
+		};
+		numberentry1	{
+			value	number(6,2);
+		};
+		scrolledwindow1	{
+			hpos	int;
+			vpos	int;
+			pandaclist1	{
+				count	int;
+				row	int;
+				item	{
+					value0	varchar(12);
+					value1	varchar(25);
+					value2	varchar(12);
+				}	[100];
+				select	bool[100];
+			};
+		};
+	};
+};

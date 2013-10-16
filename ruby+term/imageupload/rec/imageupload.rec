@@ -1,0 +1,15 @@
+imageupload	{
+	hbox1	{
+		vbox2	{
+			pixmapentry1	{
+				objectdata	object;
+				entry1	{
+					value	varchar(100);
+				};
+			};
+		};
+		pixmap1	{
+			objectdata	object;
+		};
+	};
+};

@@ -1,0 +1,8 @@
+system {
+	id		char(256);
+	num		int;
+	query {
+		key		char(256);
+		value	char(256);
+	}[10];
+};

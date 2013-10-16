@@ -1,0 +1,9 @@
+        01  SCRAREA.
+            02  HBOX1.
+              03  VBOX2.
+                04  PIXMAPENTRY1.
+                  05  UPDATA  PIC X(8).
+                  05  ENTRY1.
+                    06  FILENAME   PIC X(100).
+              03  PIXMAP1.
+                04  DOWNDATA  PIC X(8).

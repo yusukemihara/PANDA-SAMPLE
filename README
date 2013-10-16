@@ -1,0 +1,188 @@
+= BLOBを使ったファイルアップロードのサンプル
+
+== サンプル
+
+ 1. upload
+
+    GnomeFileEntryでPostScriptファイルをアップロードして
+    表示するアプリケーションです。
+
+ 2. imageupload
+
+    GnomePixmapEntryで画像ファイルをアップロードして表示する
+    アプリケーションです。
+
+それぞれ COBOL版 と Ruby版 があります。
+
+== サンプルの実行方法
+
+以下の手順で行います。
+
+ 1. サーバの起動
+   
+    下で説明します。
+
+ 2. glclientでサーバに接続
+
+      ユーザ名          : sample
+      パスワード        : sample
+      ポート            : localhost:8000
+      アプリケーション名: panda:upload、panda:imageupload
+
+ 3. サーバの停止
+
+    下で説明します。
+
+注意点
+
+ * BLOBアップロードに対応したpandaをインストールしておく必要が
+   あります。
+ * 日レセを停止しておく必要があります。
+ * サーバの停止をしないとglserver、monitor、glauthが起動した
+   ままになります。
+
+=== Ruby版のサーバの起動、停止
+
+ 0. BLOB-UPLOAD-SAMPLE/ruby+term/initスクリプトのPATHの設定
+
+    BLOB-UPLOAD-SAMPLE/ruby+term/initを開いて、PATHにpandaの
+    コマンドのディレクトリを指定します。
+
+    例
+      PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+ 1. サーバの起動
+
+    $ cd BLOB-UPLOAD-SAMPLE/ruby+term/upload
+    $ ./init start
+
+ 2. サーバの停止
+
+    $ cd BLOB-UPLOAD-SAMPLE/ruby+term/upload
+    $ ./init stop 
+
+上手く起動しない場合は、アプリケーションのディレクトリの
+ 
+ * glserver.log
+ * glauth.log
+ * monitor.log
+
+を参照して下さい。
+
+=== COBOL版のサーバの起動、停止
+
+ 0. BLOB-UPLOAD-SAMPLE/cobol+term/initスクリプトのPATHの設定
+
+    BLOB-UPLOAD-SAMPLE/cobol+term/initを開いて、PATHにpandaの
+    コマンドのディレクトリを指定します。
+
+    例
+      PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+    また copygen 等のコマンドのPATHをシェルに設定します。
+    設定しないと以降の make に失敗します
+
+      $ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+ 1. サーバの起動
+
+    $ cd BLOB-UPLOAD-SAMPLE/ruby+term/upload
+    $ make
+    $ ./init start
+
+ 2. サーバの停止
+
+    $ cd BLOB-UPLOAD-SAMPLE/ruby+term/upload
+    $ ./init stop 
+
+== サンプルプログラムの解説と実装上の注意
+
+=== アプリケーションの動作
+
+uploadのアプリケーション(UPLOAD.CBL、Upload.rb)の動作の流れを簡単
+に説明します。imageuploadについても使用しているウィジェットを除けば
+同様です。
+
+uploadの構成
+ 
+ * uploadウィンドウ
+   * GnomeFileEntryウィジェット
+   * GtkPandaPSウィジェット
+   * GtkButtonウィジェット
+
+imageuploadの構成
+ 
+ * imageuploadウィンドウ
+   * GnomePixmapEntryウィジェット
+   * GtkPixmapウィジェット
+   * GtkButtonウィジェット
+
+以下はuploadの場合
+
+ 1. 初期画面の表示
+
+    1. cobol/demo.ps を BLOBIMPORT し、GtkPandaPSウィジェット
+       にセットする
+
+    -> 初回のみGtkPandaPSウィジェットに cobol/demo.ps を表示する
+
+ 2. GtkButtonウィジェットのクリックイベント処理
+
+    0. 画面のGnomeFileEntryウィジェットで指定したファイルが
+       BLOB としてサーバ側に送られ、GnomeFileEntryのレコードに
+       objectidがセットされる
+
+    1. 0.でセットされた BLOB を BLOBEXPORT して cobol/uploaded.ps
+       に書き込む(COBOL版のみ;RubyハンドラにはBLOBEXPORTがないため)
+
+    2. GtkPandaPSウィジェットにGnomeFileEntryのBLOBのobjectid
+       をセットする
+
+    -> GtkPandaPSウィジェットにクライアントからアップロードされた
+       ファイルを表示する。
+
+    3. GnomeFileEntryウィジェットのobjectレコードに LOW-VALUE(0) を
+       セットする
+    
+    -> 0 をセットしないとクライアントからアップロードしたファイルを
+       GnomeFileEntryウィジェットにそのまま転送し返すことになる
+       その結果GnomeFileEntryのダウンロード側の機能が有効になる
+    -> objectレコード = 0 は空のBLOBを意味する。
+
+    4. uploadウィンドウの更新を指示する
+
+解説
+
+サンプルアプリケーションは一つのウィンドウでアップロード(GnomeFileEntry)
+とダウンロード(GtkPandaPS)を同時に行っていますが、実際にはアップロード
+のみを行うダイアログのようなウィンドウを作成することが考えられます。
+
+その場合処理の流れは以下のようになるでしょう。
+
+   ファイルアップロード
+
+     1. ユーザがウィンドウ1 で「アップロード」ボタンをクリック
+
+     2. アップロードを行うウィンドウ2 が表示される
+
+        * ウィンドウ2の初期化処理でGnomeFileEntryのobjectレコード
+          に LOW-VALUE(0) をセットする
+
+        ! 同セッションで以前アップロードしたファイルの objectid
+          がセットされている可能性があるため
+
+     3. ユーザがウィンドウ2 ファイルを選択して「送信」ボタンをクリック
+
+        * ウィンドウ2 のイベント処理で以下を行う
+            1. アップロードされたBLOBをEXPORTBLOBでファイルに書き出す
+            2. 1.で書き出したファイル名をDBに保存する
+
+     4. ウィンドウ1に戻る
+
+   アップロードされたファイルの使用
+
+     1. DBからファイル名を取得する
+
+     2. IMPORTBLOBでファイル名からBLOBを作成する
+
+     3. 作成したBLOBを処理する(クライアントに送る等)

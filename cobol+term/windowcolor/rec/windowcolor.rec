@@ -1,0 +1,8 @@
+windowcolor	{
+	bgcolor varchar(256);
+	fixed1	{
+		pandaentry1	{
+			color	varchar(256);
+		};
+	};
+};

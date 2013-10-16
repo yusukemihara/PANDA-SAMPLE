@@ -1,0 +1,24 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="../text/css" href="../css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+<script src='../js/jquery-1.7.1.min.js' type='text/javascript'></script>
+<script src='../js/jquery-ui-1.8.18.custom.min.js' type="text/javascript"></script>
+<script src='../js/gtk_panda.js' type="text/javascript"></script>
+
+<script type="text/javascript">
+$(function() {
+  var data = {text:"とびっきーりー\nでぃすこふぃーりんぐ？"};
+  var widget = $("#text");
+  widget.GtkPandaText()
+    .GtkPandaText("option","name","text")
+    .GtkPandaText("option",{width:300,height:200})
+    .GtkPandaText("option","activate",function(name){
+      console.log(widget.GtkPandaText("serialize",data));
+    })
+    .GtkPandaText("option","state",0)
+    .GtkPandaText("setText","abcdefg\nopqrstu")
+    .GtkPandaText("deserialize",data)
+    ;
+});
+</script>
+
+<textarea id='text'/>

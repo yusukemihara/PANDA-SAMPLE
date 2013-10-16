@@ -1,0 +1,113 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+<script src='../js/jquery-1.7.1.min.js' type='text/javascript'></script>
+<script src='../js/jquery-ui-1.8.18.custom.min.js' type="text/javascript"></script>
+<script src='../js/gtk_panda.js' type="text/javascript"></script>
+
+<link type="text/css" href="../css/gtk_panda.css" rel="Stylesheet" />
+
+<script type="text/javascript">
+$(function() {
+  var rb1 = $("#rb1")
+    .GtkRadioButton()
+    .GtkRadioButton("setLabel","rb1")
+    .GtkRadioButton("setGroup","group1")
+    .GtkRadioButton("setState",true)
+    .GtkRadioButton("option","clicked",function(name){
+      console.log("clicked " + name);
+      console.log("rb1:"+$("#rb1").GtkRadioButton("getState"));
+      console.log("rb2:"+$("#rb2").GtkRadioButton("getState"));
+      console.log("rb3:"+$("#rb3").GtkRadioButton("getState"));
+    })
+    .GtkRadioButton("option","state",0);
+  var rb2 = $("#rb2")
+    .GtkRadioButton()
+    .GtkRadioButton("setLabel","rb2")
+    .GtkRadioButton("setGroup","group1")
+    .GtkRadioButton("setState",true)
+    .GtkRadioButton("option","clicked",function(name){
+      console.log("clicked " + name);
+      console.log("rb1:"+$("#rb1").GtkRadioButton("getState"));
+      console.log("rb2:"+$("#rb2").GtkRadioButton("getState"));
+      console.log("rb3:"+$("#rb3").GtkRadioButton("getState"));
+    })
+    .GtkRadioButton("option","state",0);
+  var rb3 = $("#rb3")
+    .GtkRadioButton()
+    .GtkRadioButton("setLabel","rb3")
+    .GtkRadioButton("setGroup","group1")
+    .GtkRadioButton("setState",true)
+    .GtkRadioButton("option","clicked",function(name){
+      console.log("clicked " + name);
+      console.log("rb1:"+$("#rb1").GtkRadioButton("getState"));
+      console.log("rb2:"+$("#rb2").GtkRadioButton("getState"));
+      console.log("rb3:"+$("#rb3").GtkRadioButton("getState"));
+    })
+    .GtkRadioButton("option","state",0);
+
+  var rb4 = $("#rb4")
+    .GtkRadioButton()
+    .GtkRadioButton("setLabel","rb4")
+    .GtkRadioButton("setGroup","group2")
+    .GtkRadioButton("setState",true)
+    .GtkRadioButton("option","clicked",function(name){
+      console.log("clicked " + name);
+      console.log("rb4:"+$("#rb4").GtkRadioButton("getState"));
+      console.log("rb5:"+$("#rb5").GtkRadioButton("getState"));
+      console.log("rb6:"+$("#rb6").GtkRadioButton("getState"));
+    })
+    .GtkRadioButton("option","state",0);
+  var rb5 = $("#rb5")
+    .GtkRadioButton()
+    .GtkRadioButton("setLabel","rb5")
+    .GtkRadioButton("setGroup","group2")
+    .GtkRadioButton("setState",true)
+    .GtkRadioButton("option","clicked",function(name){
+      console.log("clicked " + name);
+      console.log("rb4:"+$("#rb4").GtkRadioButton("getState"));
+      console.log("rb5:"+$("#rb5").GtkRadioButton("getState"));
+      console.log("rb6:"+$("#rb6").GtkRadioButton("getState"));
+    })
+    .GtkRadioButton("option","state",0);
+  var rb6 = $("#rb6")
+    .GtkRadioButton()
+    .GtkRadioButton("setLabel","rb6")
+    .GtkRadioButton("setGroup","group2")
+    .GtkRadioButton("setState",true)
+    .GtkRadioButton("option","clicked",function(name){
+      console.log("clicked " + name);
+      console.log("rb4:"+$("#rb4").GtkRadioButton("getState"));
+      console.log("rb5:"+$("#rb5").GtkRadioButton("getState"));
+      console.log("rb6:"+$("#rb6").GtkRadioButton("getState"));
+    })
+    .GtkRadioButton("option","state",0);
+  var rb7 = $("#rb7")
+    .GtkRadioButton()
+    .GtkRadioButton("setLabel","rb7")
+    .GtkRadioButton("setGroup","group1")
+    .GtkRadioButton("setState",true)
+    .GtkRadioButton("option","clicked",function(name){
+      console.log("clicked " + name);
+    })
+    .GtkRadioButton("option","state",4);
+  var rb8 = $("#rb8")
+    .GtkRadioButton()
+    .GtkRadioButton("setLabel","rb8")
+    .GtkRadioButton("setGroup","group1")
+    .GtkRadioButton("setState",true)
+    .GtkRadioButton("option","clicked",function(name){
+      console.log("clicked " + name);
+    })
+    .GtkRadioButton("option","state",4);
+});
+</script>
+<div id="rb1"></div>
+<div id="rb2"></div>
+<div id="rb3"></div>
+<hr>
+<div id="rb4"></div>
+<div id="rb5"></div>
+<div id="rb6"></div>
+<hr>
+<div id="rb7"></div>
+<div id="rb8"></div>

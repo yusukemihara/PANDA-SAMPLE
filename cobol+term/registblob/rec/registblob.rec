@@ -1,0 +1,10 @@
+registblob	{
+	vbox1	{
+		entry	{
+			title	varchar(100);
+		};
+		pixmap {
+			oid	object;
+		};
+	};
+};

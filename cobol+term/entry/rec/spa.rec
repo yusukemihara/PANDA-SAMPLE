@@ -1,0 +1,6 @@
+spa {
+    summary varchar(256);
+    body varchar(1024);
+	icon varchar(256);
+	timeout int;
+};

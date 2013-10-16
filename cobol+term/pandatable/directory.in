@@ -1,0 +1,22 @@
+name    pandatable;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+sysdata {
+	space "/tmp/blob";
+	port "/tmp/sysdata";
+};
+
+wfc {
+    port      ":9001";
+};
+
+ld {
+	pandatable	1;
+};

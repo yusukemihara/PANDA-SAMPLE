@@ -1,0 +1,4 @@
+spa {
+	labeldata1 varchar(256);
+	entrydata1 varchar(256);
+};

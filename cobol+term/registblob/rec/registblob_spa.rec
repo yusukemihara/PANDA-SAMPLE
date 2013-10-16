@@ -1,0 +1,3 @@
+registblob_spa {
+    dummy char;
+};

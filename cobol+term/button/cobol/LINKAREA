@@ -1,0 +1,5 @@
+        01  LINKAREA.
+            02  LINKDATA-REDEFINE.
+              03  FILLER      PIC X(400).
+            02  BUTTON  REDEFINES   LINKDATA-REDEFINE.
+                04  LNK-LINKTEXT    PIC X(400).

@@ -1,0 +1,74 @@
+PATH=/usr/lib/panda/bin:/usr/lib/panda/sbin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:$PATH
+#PATH=/tmp/opt/bin:/tmp/opt/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+#LD_LIBRARY_PATH=/tmp/opt/lib
+
+if [ ! -e directory ]; then
+    echo "'directory' not found. You must run make."
+    exit 1
+fi
+
+APPDIR="."
+
+export COB_LIBRARY_PATH=${APPDIR}/cobol:$HOME/local/lib:/usr/local/lib:/usr/lib:/usr/lib/panda/
+#export COB_LIBRARY_PATH=${APPDIR}/cobol:$HOME/local/lib:/usr/local/lib:/usr/lib:/opt/panda/lib
+
+PASSWORD="./passwd"
+RECORDDIR="$APPDIR/rec"
+SCREENDIR="$APPDIR/screen"
+
+WFC_LOG="$APPDIR/wfc.log"
+APS_LOG="$APPDIR/aps.log"
+GLSERVER_LOG="$APPDIR/glserver.log"
+
+set -e
+
+case "$1" in
+    start)
+        wfc > "$WFC_LOG" 2>&1 &
+        #valgrind wfc > "$WFC_LOG" 2>&1 &
+        sleep 1
+        aps webclient3> "$APS_LOG" 2>&1 &
+        sleep 1
+        glserver -api -auth file:///`pwd`/passwd -screen $SCREENDIR -record $RECORDDIR > "$GLSERVER_LOG" 2>&1 &
+#        valgrind glserver -api -auth file:///`pwd`/passwd -screen $SCREENDIR -record $RECORDDIR > "$GLSERVER_LOG" 2>&1 &
+        echo "."
+        ;;
+    stop)
+		(killall  aps&)
+		(killall  wfc&)
+		(killall  glserver&)
+        $0 clean
+        ;;
+    restart)
+        $0 stop
+        sleep 2
+        $0 start
+        ;;
+    clean)
+        rm -f ${GLSERVER_LOG}
+        rm -f ${APS_LOG}*
+        rm -f ${WFC_LOG}
+        rm -f ${APPDIR}/blob/*
+        rm -rf ${APPDIR}/cache
+        if [ -e ${APPDIR}/blob ]; then
+            for f in ${APPDIR}/blob/*; do
+                if [ ! -d $f ]; then
+                    rm -rf $f
+                fi
+            done
+        fi
+        echo "done."
+        ;;
+    *)
+        echo "Usage: init {start|stop|restart|clean}" >&2
+        exit 1
+        ;;
+esac
+
+unset COB_LIBRARY_PATH
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# End:

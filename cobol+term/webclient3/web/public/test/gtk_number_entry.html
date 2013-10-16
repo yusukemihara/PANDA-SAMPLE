@@ -1,0 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+<script src='../js/jquery-1.7.1.min.js' type='text/javascript'></script>
+<script src='../js/jquery-ui-1.8.18.custom.min.js' type="text/javascript"></script>
+<script src='../js/gtk_panda.js' type="text/javascript"></script>
+
+<link type="text/css" href="../css/gtk_panda.css" rel="Stylesheet" />
+
+<script type="text/javascript">
+$(function() {
+  $("#entry").GtkNumberEntry()
+    .GtkNumberEntry("option","name","entry")
+    .GtkNumberEntry("option","width",200)
+    .GtkNumberEntry("option","height",30)
+    .GtkNumberEntry("option","format","-9,999,999.99")
+    .GtkNumberEntry("option","activate",function(name){
+       console.log(name);
+       console.log($("#entry").GtkNumberEntry("getValue"));
+       console.log($('#entry').GtkNumberEntry("serialize",{editable:"false",value:0}));
+    })
+    .GtkNumberEntry("setValue",-192.354)
+    .GtkNumberEntry("deserialize",{editable:"true",value:-988.01})
+    ;
+  console.log($("#entry").GtkNumberEntry("get"));
+});
+</script>
+
+<input id='entry'/>

@@ -1,0 +1,3 @@
+        01  DB-WORK.
+            02  DB-WORK-OBJECT  PIC X(8).
+            02  DB-WORK-FILE    PIC X(256).

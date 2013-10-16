@@ -1,0 +1,20 @@
+= MCP-TEMPDIR(日レセ4.8)
+
+エントリーにファイル名を入力しEnterで確定すると、MCP-TEMPDIR以下にファイルを作成する。
+
+= 動作方法
+
+== 起動
+
+$ make
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== クライアント設定
+
+アプリケーション指定 -> panda:sample
+ユーザパスワード -> sample:sample

@@ -1,0 +1,10 @@
+#!/bin/bash -x
+
+LDNAME="print"
+
+source ./initlib
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# End:

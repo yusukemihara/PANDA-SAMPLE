@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<GTK-Interface>
+
+<project>
+  <name>upload</name>
+  <program_name>upload</program_name>
+  <directory></directory>
+  <pixmaps_directory>pixmaps</pixmaps_directory>
+  <gnome_support>True</gnome_support>
+  <gtkpanda_support>True</gtkpanda_support>
+</project>
+
+<widget>
+  <class>GtkWindow</class>
+  <name>imageupload</name>
+  <width>400</width>
+  <height>300</height>
+  <title>imageupload</title>
+  <type>GTK_WINDOW_TOPLEVEL</type>
+  <position>GTK_WIN_POS_NONE</position>
+  <modal>False</modal>
+  <allow_shrink>False</allow_shrink>
+  <allow_grow>True</allow_grow>
+  <auto_shrink>False</auto_shrink>
+
+  <widget>
+    <class>GtkHBox</class>
+    <name>hbox1</name>
+    <homogeneous>False</homogeneous>
+    <spacing>0</spacing>
+
+    <widget>
+      <class>GtkVBox</class>
+      <name>vbox2</name>
+      <homogeneous>False</homogeneous>
+      <spacing>0</spacing>
+      <child>
+	<padding>0</padding>
+	<expand>True</expand>
+	<fill>True</fill>
+      </child>
+
+      <widget>
+	<class>GnomePixmapEntry</class>
+	<name>pixmapentry1</name>
+	<width>24</width>
+	<height>24</height>
+	<preview>False</preview>
+	<child>
+	  <padding>0</padding>
+	  <expand>True</expand>
+	  <fill>True</fill>
+	</child>
+
+	<widget>
+	  <class>GnomeFileEntry</class>
+	  <child_name>GnomePixmapEntry:file-entry</child_name>
+	  <name>entry1</name>
+	  <width>222</width>
+	  <height>24</height>
+	  <max_saved>10</max_saved>
+	  <directory>False</directory>
+	  <modal>False</modal>
+
+	  <widget>
+	    <class>GtkEntry</class>
+	    <child_name>GnomeEntry:entry</child_name>
+	    <name>entry1</name>
+	    <can_focus>True</can_focus>
+	    <editable>True</editable>
+	    <text_visible>True</text_visible>
+	    <text_max_length>0</text_max_length>
+	    <text></text>
+	  </widget>
+	</widget>
+      </widget>
+
+      <widget>
+	<class>GtkButton</class>
+	<name>button1</name>
+	<border_width>42</border_width>
+	<height>40</height>
+	<can_focus>True</can_focus>
+	<signal>
+	  <name>clicked</name>
+	  <handler>send_event</handler>
+	  <data>CLICKED</data>
+	  <last_modification_time>Wed, 19 Dec 2007 04:58:21 GMT</last_modification_time>
+	</signal>
+	<label>send</label>
+	<relief>GTK_RELIEF_NORMAL</relief>
+	<child>
+	  <padding>0</padding>
+	  <expand>True</expand>
+	  <fill>True</fill>
+	</child>
+      </widget>
+    </widget>
+
+    <widget>
+      <class>GnomePixmap</class>
+      <name>pixmap1</name>
+      <width>200</width>
+      <height>200</height>
+      <child>
+	<padding>0</padding>
+	<expand>True</expand>
+	<fill>False</fill>
+      </child>
+    </widget>
+  </widget>
+</widget>
+
+</GTK-Interface>

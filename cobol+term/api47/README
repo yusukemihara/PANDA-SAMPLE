@@ -1,0 +1,20 @@
+= API HTTPステータスを設定するサンプル
+
+http://localhost:8000/api47/api47?reqstatus=200
+
+という風に入力されたHTTPステータスを返すAPI
+
+= 動作方法
+
+== 起動
+
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== APIユーザパスワード設定
+
+sample:sample

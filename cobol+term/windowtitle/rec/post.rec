@@ -1,0 +1,17 @@
+post {
+	request {
+		arguments {
+    		dummy	varchar(100);
+		};
+    	methodtype		varchar(100);
+    	content_type	varchar(100);
+    	content_length	varchar(100);
+    	body			varchar(1000000);
+	};
+	response {
+    	resmethod		varchar(100);
+    	resctype		varchar(100);
+    	resclength		varchar(100);
+    	resbody			varchar(1000000);
+	};
+};

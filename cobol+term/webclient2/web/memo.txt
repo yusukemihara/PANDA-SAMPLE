@@ -1,0 +1,8 @@
+= URL
+
+/
+/client/login
+/client/logout
+/client/screendata.json
+
+/api

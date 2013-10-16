@@ -1,0 +1,14 @@
+        01  SCRAREA.
+            03  HBOX1.
+                05  BT1.
+                    07  BT1BOOL     PIC X.
+                    07  BT1STYLE    PIC X(20).
+                05  LB1.
+                    07  LB1TEXT     PIC X(20).
+                    07  LB1STYLE    PIC X(20).
+                05  BT2.
+                    07  BT2BOOL     PIC X.
+                    07  BT2STYLE    PIC X(20).
+                05  BT3.
+                    07  BT3BOOL     PIC X.
+                    07  BT3STYLE    PIC X(20).

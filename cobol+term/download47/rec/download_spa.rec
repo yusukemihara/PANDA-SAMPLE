@@ -1,0 +1,3 @@
+download_spa {
+    dummy char;
+};

@@ -1,0 +1,22 @@
+xmlio	{
+	vbox1 {
+		scrolledwindow1	{
+			pandaclist1	{
+				count		int;
+				row			int;
+				rowattr 	int;
+				item	{
+					value0	varchar(128);
+					value1	varchar(128);
+					value2	varchar(10);
+					value3	varchar(20);
+					value4	varchar(10);
+					value5	varchar(10);
+					value6	varchar(10);
+					value7	varchar(10);
+				}[10];
+				select	bool[10];
+			};
+		};
+	};
+};

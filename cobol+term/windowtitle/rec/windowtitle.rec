@@ -1,0 +1,8 @@
+windowtitle	{
+    title	varchar(100);
+	vbox1	{
+		entry1	{
+			evalue	varchar(100);
+		};
+	};
+};

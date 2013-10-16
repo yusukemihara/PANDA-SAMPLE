@@ -1,0 +1,38 @@
+        01  SCRAREA.
+            02  SCREENDATA.
+              03  WINDOW1.
+                04  TITLE   PIC X(256).
+                04  POPUP-SUMMARY   PIC X(256).
+                04  POPUP-BODY  PIC X(1024).
+                04  POPUP-ICON  PIC X(256).
+                04  POPUP-TIMEOUT   PIC S9(9)   BINARY.
+                04  FIXED1.
+                  05  SCROLLEDWINDOW1.
+                    06  HPOS    PIC S9(9)   BINARY.
+                    06  VPOS    PIC S9(9)   BINARY.
+                    06  PANDACLIST1.
+                      07  COUNT1   PIC S9(9)   BINARY.
+                      07  ROW1 PIC S9(9)   BINARY.
+                      07  ITEM1          OCCURS  128 TIMES.
+                        08  VALUE0  PIC X(256).
+                        08  VALUE1  PIC X(256).
+                        08  VALUE2  PIC X(256).
+                        08  VALUE3  PIC X(256).
+                        08  VALUE4  PIC X(256).
+                        08  VALUE5  PIC X(256).
+                        08  VALUE6  PIC X(256).
+                        08  VALUE7  PIC X(256).
+                        08  VALUE8  PIC X(256).
+                        08  VALUE9  PIC X(256).
+                        08  VALUE10 PIC X(256).
+                        08  VALUE11 PIC X(256).
+                        08  VALUE12 PIC X(256).
+                        08  VALUE13 PIC X(256).
+                        08  VALUE14 PIC X(256).
+                        08  VALUE15 PIC X(256).
+                      07  SELECT1
+                              PIC X       OCCURS  128 TIMES.
+                  05  PANDAENTRY1.
+                    06  ENTRY1  PIC X(256).
+                  05  PANDAENTRY2.
+                    06  ENTRY2  PIC X(256).

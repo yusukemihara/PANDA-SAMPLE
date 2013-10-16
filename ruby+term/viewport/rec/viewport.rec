@@ -1,0 +1,13 @@
+viewport	{
+	swindow1	{
+		hpos	int;
+		vpos	int;
+		viewport1	{
+			fixed1	{
+				entry1	{
+					value	varchar(20);
+				};
+			};
+		};
+	};
+};

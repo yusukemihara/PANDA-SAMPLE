@@ -1,0 +1,8 @@
+imageupload_spa {
+    dummy char;
+};
+
+# Local Variables:
+# indent-tabs-mode: nil
+# tab-width: 4
+# End:

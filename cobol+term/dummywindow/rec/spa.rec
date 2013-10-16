@@ -1,0 +1,4 @@
+spa {
+    next varchar(256);
+	times int;
+};

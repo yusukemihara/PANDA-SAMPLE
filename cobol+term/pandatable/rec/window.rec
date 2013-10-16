@@ -1,0 +1,34 @@
+window {
+	scrolledwindow1 {
+		pandatable1 {
+	      state int;
+          style varchar(256);
+          trow int;          
+          trowattr int;     
+          tcolumn int; 
+          tvalue varchar(256);
+          rowdata {                   # テーブルデータ
+			column1 {
+				celldata varchar(256); #セルの内容
+				fgcolor varchar(256);  #セルの前景色
+				bgcolor varchar(256);  #セルの背景色
+			} ;
+			column2 {
+				celldata varchar(256); #セルの内容
+				fgcolor varchar(256);  #セルの前景色
+				bgcolor varchar(256);  #セルの背景色
+			} ;
+			column3 {
+				celldata varchar(256); #セルの内容
+				fgcolor varchar(256);  #セルの前景色
+				bgcolor varchar(256);  #セルの背景色
+			} ;
+			column4 {
+				celldata varchar(256); #セルの内容
+				fgcolor varchar(256);  #セルの前景色
+				bgcolor varchar(256);  #セルの背景色
+			} ;
+          }[1000];                    # サイズn_rowsの配列
+		};
+	};
+};

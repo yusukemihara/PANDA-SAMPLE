@@ -1,0 +1,5 @@
+        01  DBPATH.
+            02  PATH-WORK-PRIMARY.
+              03  FILLER      PIC S9(9)   BINARY  VALUE 1.
+              03  FILLER      PIC S9(9)   BINARY  VALUE 1.
+              03  FILLER      PIC S9(9)   BINARY  VALUE 0.

@@ -1,0 +1,14 @@
+action01 {
+	request {
+		arguments {
+			reqval01		varchar(100);
+		};
+    	httpmethod		varchar(100);
+    	content_type	varchar(100);
+    	content_length	varchar(100);
+    	body			varchar(1024);
+	};
+	response {
+		resval01		varchar(100);
+	};
+};

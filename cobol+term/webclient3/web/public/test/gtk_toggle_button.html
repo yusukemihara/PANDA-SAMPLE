@@ -1,0 +1,22 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+<script src='../js/jquery-1.7.1.min.js' type='text/javascript'></script>
+<script src='../js/jquery-ui-1.8.18.custom.min.js' type="text/javascript"></script>
+<script src='../js/gtk_panda.js' type="text/javascript"></script>
+
+<link type="text/css" href="../css/gtk_panda.css" rel="Stylesheet" />
+
+<script type="text/javascript">
+$(function() {
+  $("#tb1")
+    .GtkToggleButton()
+    .GtkToggleButton("set_label","mogeeeeee")
+    .GtkToggleButton("option","name","tb1")
+    .GtkToggleButton("option","clicked",function(name){
+      console.log("clicked " + name);
+      console.log($("#tb1").GtkToggleButton("get_state"));
+    })
+    .GtkCheckButton("option","state",0);
+});
+</script>
+<button id="tb1">gya-</button>

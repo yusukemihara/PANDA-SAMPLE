@@ -1,0 +1,22 @@
+= XMLIO2テストプログラム
+
+POSTメソッドで入力されたxmlをそのまま返すAPI
+
+= 動作方法
+
+== 起動
+
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== POST
+
+http://localhost:8000/xmlio2/xmlio2
+
+以下のコマンドでリクエストを発行できる。
+
+% ruby post.rb

@@ -1,0 +1,4 @@
+2011/08/26/13:17:54 P:glserver.c:151:glserver start
+2011/08/26/13:17:57 P:server.c:456:[sample@localhost] "glclient2/1.4.7" session start
+2011/08/26/13:17:57 P:server.c:468:[sample@localhost] client authenticated
+2011/08/26/13:18:00 P:server.c:72:[sample@localhost] session end

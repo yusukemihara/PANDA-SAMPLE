@@ -1,0 +1,30 @@
+name    xmlio2;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+wfc {
+    port      ":9001";
+};
+
+blob {
+	space	"=/blob";
+	port	"/tmp/sysdata";
+};
+
+db_group "blob" {
+	type	"NativeBLOB";
+};
+
+db_group "xml2" {
+	type	"XMLIO2";
+};
+
+ld {
+	xmlio2	1;
+};

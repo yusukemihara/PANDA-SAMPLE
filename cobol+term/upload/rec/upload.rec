@@ -1,0 +1,13 @@
+upload	{
+	vbox2	{
+		fileentry1	{
+			objectdata object;
+			entry1 {
+				value varchar(100);
+			};
+		};
+		pandaps1	{
+			psdata object;
+		};
+	};
+};

@@ -1,0 +1,3 @@
+2011/08/26/13:17:52 P:wfc.c:401:wfc start
+2011/08/26/13:17:57 L:termthread.c:397:[sample@460DB:0100007F:00006619] session start(1)
+2011/08/26/13:18:00 L:termthread.c:288:[sample@460DB:0100007F:00006619] session end

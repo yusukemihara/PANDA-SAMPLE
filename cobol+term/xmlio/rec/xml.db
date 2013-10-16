@@ -1,0 +1,12 @@
+xml {
+    object  object;
+	mode	int;
+	record1 {
+		char1		char(128);
+		varchar1	varchar(128);
+		int1		int;
+		number1		number(15,10);
+		bool1		bool;
+		array1		int[3];
+	};
+};

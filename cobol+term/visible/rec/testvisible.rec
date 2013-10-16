@@ -1,0 +1,37 @@
+testvisible	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+		numberentry1	{
+			visible bool;
+			value1	number(5,1);
+		};
+		pandaentry1	{
+			visible bool;
+			value1	varchar(256);
+		};
+		pandatext1	{
+			visible bool;
+			value1	varchar(1024);
+		};
+		pandacombo1	{
+			pandacomboentry1	{
+				value1	varchar(256);
+			};
+			visible bool;
+			item	varchar(256)[10];
+		};
+		button1 {
+			visible bool;
+		};
+		label1 {
+			visible bool;
+		};
+		frame1 {
+			visible bool;
+		};
+	};
+};

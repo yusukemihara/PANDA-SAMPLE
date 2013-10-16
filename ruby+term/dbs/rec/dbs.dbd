@@ -1,0 +1,8 @@
+name	dbs;
+
+arraysize       20;
+textsize        200;
+
+db      {
+        test;
+};

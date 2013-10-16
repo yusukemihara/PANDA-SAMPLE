@@ -1,0 +1,58 @@
+= ダミーウィンドウの動作確認するサンプル
+
+window1とwindow2を切り替える間に_dummyを経由し、
+その間にクライアント印刷のURLを受け取るサンプル
+
+プログラムの動作
+
+1. window1でボタンをクリック
+   -> _dummyを3回遷移した後window2へ遷移
+2. window2でボタンをクリック
+   -> _dummyを5回遷移した後window1へ遷移
+   -> 1.へ
+
+解説
+
+WINDOW1.CBL
+  * SPA-NEXTに window2 を設定
+  * SPA-TIMESに 3 を設定
+  * DUMMY-PATHなどにクライアント印刷のURLを設定
+  * _dummyへ遷移
+
+DUMMY.CBL
+  * SPA-TIMESが0ならばSPA-NEXTに遷移
+  * SPA-TIMESが0でないなら、SPA-TIMESを1減らし_dummyへ遷移
+
+WINDOW2.CBL
+  * SPA-NEXTに window1 を設定
+  * SPA-TIMESに 5 を設定
+  * DUMMY-PATHなどにクライアント印刷のURLを設定
+  * _dummyへ遷移
+
+
+= ビルド
+
+$ make
+
+そのままだとSCRAREAの3行目でエラーが発生するので修正が必要
+"-DUMMY"を"DUMMY"にする
+
+= 動作方法
+
+== 起動
+
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== pandaの指定
+
+initlibのPATH,LD_LIBRARY_PATHで指定する。
+
+== クライアント設定
+
+アプリケーション指定 -> panda:dummywindow
+ユーザパスワード -> sample:sample

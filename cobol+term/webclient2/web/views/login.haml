@@ -1,0 +1,11 @@
+!!! XHTML
+%head
+  %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'UTF-8'}
+  %title login
+  %style{:type => "text/css"}
+%body
+  %div
+    %form{:action => "login" ,:method  => "post"}
+      %span user:
+      %input#user{:type=> "text",:name =>"user"}
+      %input#button{:type=>"submit"}

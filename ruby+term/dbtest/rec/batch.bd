@@ -1,0 +1,17 @@
+name	batch;
+
+arraysize	20;
+textsize	400;
+
+handler "Ruby" {
+	class		"Ruby";
+	loadpath	"=/ruby";
+	locale 		"utf-8";
+};
+
+bind	"BATCHALL"	"Ruby";
+bind	"BATCHKEY"	"Ruby";
+
+db {
+	test;
+};

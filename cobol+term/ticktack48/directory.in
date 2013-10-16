@@ -1,0 +1,24 @@
+name    ticktack48;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+wfc {
+    port      ":9001";
+};
+
+sysdata {
+    space   "=/blob";
+    port    "/tmp/sysdata";
+};
+
+ld {
+	tick		1;
+	tack		1;
+	session		1;
+};

@@ -1,0 +1,36 @@
+window2	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+        label1 {
+            l1str	varchar(128);
+        };
+		toggle1	{
+			t1bool	bool;
+		};
+		check1	{
+			c1bool	bool;
+		};
+		radio1	{
+			r1bool	bool;
+		};
+		radio2	{
+			r2bool	bool;
+		};
+		radio3	{
+			r3bool	bool;
+		};
+		radio4	{
+			r4bool	bool;
+		};
+		radio5	{
+			r5bool	bool;
+		};
+		radio6	{
+			r6bool	bool;
+		};
+	};
+};

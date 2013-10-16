@@ -1,0 +1,12 @@
+_dummy	{
+	fixed1 {
+	pandaprint1	{
+		item {
+			path	varchar(256);
+			title	varchar(256);
+			nretry	int;
+			showdialog	int;
+		}[1];
+	};
+	};
+};

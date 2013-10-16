@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<diagram xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
+  <dictionarydata>
+    <element name="NEW" occurs="1">
+      <appinfo>
+        <embed object="string" length="20"/>
+      </appinfo>
+    </element>
+  </dictionarydata>
+  <diagramdata>
+    <attribute name="background">
+      <color val="#ffffff"/>
+    </attribute>
+    <attribute name="paper">
+      <composite type="paper">
+        <attribute name="name">
+          <string>#A4#</string>
+        </attribute>
+        <attribute name="pswidth">
+          <real val="21"/>
+        </attribute>
+        <attribute name="psheight">
+          <real val="29.7"/>
+        </attribute>
+        <attribute name="tmargin">
+          <real val="2.82"/>
+        </attribute>
+        <attribute name="bmargin">
+          <real val="2.82"/>
+        </attribute>
+        <attribute name="lmargin">
+          <real val="2.82"/>
+        </attribute>
+        <attribute name="rmargin">
+          <real val="2.82"/>
+        </attribute>
+        <attribute name="is_portrait">
+          <boolean val="true"/>
+        </attribute>
+        <attribute name="scaling">
+          <real val="1"/>
+        </attribute>
+        <attribute name="fitto">
+          <boolean val="false"/>
+        </attribute>
+      </composite>
+    </attribute>
+  </diagramdata>
+  <layer name="&#199;&#216;&#183;&#202;" visible="true">
+    <object type="Standard - Text" version="0" id="O0">
+      <attribute name="obj_pos">
+        <point val="2.75,6.7"/>
+      </attribute>
+      <attribute name="obj_bb">
+        <rectangle val="2.75,2.71852;5.78,7.71852"/>
+      </attribute>
+      <attribute name="text">
+        <composite type="text">
+          <attribute name="string">
+            <string>#1#</string>
+          </attribute>
+          <attribute name="font">
+            <font name="Courier"/>
+          </attribute>
+          <attribute name="height">
+            <real val="5"/>
+          </attribute>
+          <attribute name="pos">
+            <point val="2.75,6.7"/>
+          </attribute>
+          <attribute name="color">
+            <color val="#000000"/>
+          </attribute>
+          <attribute name="alignment">
+            <enum val="0"/>
+          </attribute>
+          <attribute name="single">
+            <real val="3.03"/>
+          </attribute>
+          <attribute name="multi">
+            <real val="2.525"/>
+          </attribute>
+        </composite>
+      </attribute>
+    </object>
+    <object type="Embed - Text" version="0" id="O1">
+      <attribute name="obj_pos">
+        <point val="1.75,26.25"/>
+      </attribute>
+      <attribute name="obj_bb">
+        <rectangle val="1.75,25.4537;3.568,26.4537"/>
+      </attribute>
+      <attribute name="dnode_path">
+        <string>#NEW#</string>
+      </attribute>
+      <attribute name="embed_text_string">
+        <enum val="0"/>
+      </attribute>
+      <attribute name="text">
+        <composite type="text">
+          <attribute name="string">
+            <string>#NEW#</string>
+          </attribute>
+          <attribute name="font">
+            <font name="Courier"/>
+          </attribute>
+          <attribute name="height">
+            <real val="1"/>
+          </attribute>
+          <attribute name="pos">
+            <point val="1.75,26.25"/>
+          </attribute>
+          <attribute name="color">
+            <color val="#000000"/>
+          </attribute>
+          <attribute name="alignment">
+            <enum val="0"/>
+          </attribute>
+          <attribute name="single">
+            <real val="0.606"/>
+          </attribute>
+          <attribute name="multi">
+            <real val="0.505"/>
+          </attribute>
+        </composite>
+      </attribute>
+      <attribute name="embed_data">
+        <string>#&#143;&#173;&#241;&#143;&#173;&#242;&#143;&#173;&#243;&#143;&#173;&#244;&#143;&#173;&#245;&#143;&#173;&#246;#</string>
+      </attribute>
+    </object>
+  </layer>
+</diagram>

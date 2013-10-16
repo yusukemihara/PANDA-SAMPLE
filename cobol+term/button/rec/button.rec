@@ -1,0 +1,20 @@
+button	{
+	hbox1 {
+		togglebutton1	{
+			value	bool;
+			style   varchar(20);
+		};
+		label1			{
+			value	varchar(20);
+			style	varchar(20);
+		};
+		button2	{
+			value	bool;
+			style   varchar(20);
+		};
+		button3	{
+			value	bool;
+			style   varchar(20);
+		};
+	};
+};

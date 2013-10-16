@@ -1,0 +1,3 @@
+RED2REC	{
+	NEW	varchar(20);
+};

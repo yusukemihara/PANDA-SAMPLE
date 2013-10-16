@@ -1,0 +1,34 @@
+name    imageupload;
+
+base    ".";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+wfc {
+    termport  ":9000";
+    port      ":9001";
+};
+
+blob {
+    space   "=/blob";
+    port    "/tmp/blog.blob";
+    auth    "../passwd";
+};
+
+db_group    "work" {
+    type    "NativeBLOB";
+};
+
+ld      {
+    imageupload      1;
+};
+
+
+# Local Variables:
+# indent-tabs-mode: nil
+# tab-width: 4
+# End:

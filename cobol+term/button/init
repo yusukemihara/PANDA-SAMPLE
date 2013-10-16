@@ -1,0 +1,10 @@
+#!/bin/sh
+
+LDNAME="button"
+
+source ../init
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# End:

@@ -1,0 +1,12 @@
+screen1 {
+	fixed1 {
+		p1 {
+			item {
+				path		varchar(256);
+				title	varchar(256);
+				showdialog int;
+				nretry int;
+			}[10];
+		};
+	};
+};

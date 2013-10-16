@@ -1,0 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+<script src='../js/jquery-1.7.1.min.js' type='text/javascript'></script>
+<script src='../js/jquery-ui-1.8.18.custom.min.js' type="text/javascript"></script>
+<script src='../js/gtk_panda.js' type="text/javascript"></script>
+<link type="text/css" href="../css/gtk_panda.css" rel="Stylesheet" />
+
+<script type="text/javascript">
+$(function() {
+  var data = {editable:"true",text:"テキスト"};
+  var entry = $("#entry");
+  entry
+    .GtkPandaEntry()
+    .GtkPandaEntry("option","name","entry")
+    .GtkPandaEntry("option","maxlength","10")
+    .GtkPandaEntry("option","input_mode","ascii")
+    .GtkPandaEntry("option","activate",function(w){
+      console.log(entry.GtkPandaEntry("serialize",data));
+    })
+    .GtkPandaEntry("option","state",4)
+    .GtkPandaEntry("option","state",0)
+    .GtkPandaEntry("setText","hoge")
+    .GtkPandaEntry("deserialize",data)
+  ;
+});
+</script>
+
+<input id='entry'/>

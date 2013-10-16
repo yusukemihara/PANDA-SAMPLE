@@ -1,0 +1,16 @@
+action02 {
+	request {
+		arguments {
+			reqid		varchar(100);
+			reqval02		varchar(100);
+		};
+    	httpmethod			varchar(100);
+    	content_type	varchar(100);
+    	content_length	varchar(100);
+    	body			varchar(1024);
+	};
+	response {
+		resid		varchar(100);
+		resval02		varchar(100);
+	};
+};

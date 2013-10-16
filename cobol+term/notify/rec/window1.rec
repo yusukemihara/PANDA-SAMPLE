@@ -1,0 +1,23 @@
+window1	{
+	title	varchar(256);
+	style	varchar(256);
+	bgcolor	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+		body	{
+			bodyvalue	varchar(1024);
+		};
+		timeout	{
+			timeoutvalue	varchar(256);
+		};
+		summary	{
+			summaryvalue	varchar(256);
+		};
+		icon	{
+			iconvalue	varchar(256);
+		};
+	};
+};

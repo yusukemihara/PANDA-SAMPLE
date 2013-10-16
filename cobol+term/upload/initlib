@@ -1,0 +1,140 @@
+#PATH=/usr/lib/panda/bin:/usr/lib/panda/sbin:$PATH
+PATH=/tmp/panda-test/bin:/tmp/panda-test/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+export LD_LIBRARY_PATH=/tmp/panda-test/lib
+
+if [ "x$LDNAME" = "x" ]; then
+    echo "LDNAME must be set in script"
+    exit 1
+fi
+
+if [ ! -e directory ]; then
+    echo "'directory' not found. You must run make."
+    exit 1
+fi
+
+APPDIR="."
+
+PASSWORD="./passwd"
+RECORDDIR="$APPDIR/rec"
+SCREENDIR="$APPDIR/screen"
+
+GLAUTH_LOG="$APPDIR/glauth.log"
+MONITOR_LOG="$APPDIR/monitor.log"
+GLSERVER_LOG="$APPDIR/glserver.log"
+GLCLIENT_LOG="$APPDIR/glclient.log"
+
+GLAUTH_PID="$APPDIR/glauth.pid"
+MONITOR_PID="$APPDIR/monitor.pid"
+GLSERVER_PID="$APPDIR/glserver.pid"
+GLCLIENT_PID="$APPDIR/glclient.pid"
+
+S_SEPARATOR="===== start[$LDNAME] ======================================="
+E_SEPARATOR="===== end  [$LDNAME] ======================================="
+
+export COB_LIBRARY_PATH=${APPDIR}/cobol:$HOME/local/lib:/usr/local/lib:/usr/lib:/tmp/panda-test/lib
+
+set -e
+
+kill_daemon() {
+    pidfile=$1
+    signal=$2
+    [ -f $pidfile ] && kill -$signal `cat $pidfile` || /bin/true
+    rm -f $pidfile
+}
+
+case "$1" in
+    start)
+        if test -e ${GLAUTH_PID}; then
+            echo "Error!!"
+            echo "already starting applications"
+            exit 1
+        fi
+        echo -n "Starting '$LDNAME': "
+        echo -n " glauth"
+        echo "$S_SEPARATOR" >> "$GLAUTH_LOG"
+        glauth -password $PASSWORD >> "$GLAUTH_LOG" 2>&1 &
+        echo $! > "$GLAUTH_PID"
+        echo -n " monitor"
+        echo "$S_SEPARATOR" >> "$MONITOR_LOG"
+        monitor -wfcwait 1 >> "$MONITOR_LOG" 2>&1 &
+        echo $! > "$MONITOR_PID"
+        sleep 1
+        echo -n " glserver"
+        echo "$S_SEPARATOR" >> "$GLSERVER_LOG"
+        glserver -screen $SCREENDIR -record $RECORDDIR >> "$GLSERVER_LOG" 2>&1 &
+        echo $! > "$GLSERVER_PID"
+        echo "."
+        #$0 client
+        ;;
+    stop)
+        $0 killclient
+        echo -n "Stopping '$LDNAME': "
+        echo -n " glserver"
+        kill_daemon "$GLSERVER_PID" TERM
+        echo "$E_SEPARATOR" >> "$GLSERVER_LOG"
+        echo -n " monitor"
+        kill_daemon "$MONITOR_PID" USR1
+        echo "$E_SEPARATOR" >> "$MONITOR_LOG"
+        echo -n " glauth"
+        kill_daemon "$GLAUTH_PID" TERM
+        echo "$E_SEPARATOR" >> "$GLAUTH_LOG"
+        echo "."
+        echo "type './init clean' to clean etc files"
+        $0 clean
+        ;;
+    client)
+        echo -n "Running '$LDNAME' client..."
+        echo "$S_SEPARATOR" >> "$GLCLIENT_LOG"
+        glclient $GLCLIENT_PROTOCOL -user sample -pass sample panda:${LDNAME} -mlog >> "$GLCLIENT_LOG" 2>&1 &
+
+        echo $! > "$GLCLIENT_PID"
+        echo "done"
+        echo "type './init stop' to stop '${LDNAME}'"
+        ;;
+    killclient)
+        echo -n "Stopping '$LDNAME': "
+        echo -n " glclient"
+        kill_daemon "$GLCLIENT_PID" TERM
+        echo "$E_SEPARATOR" >> "$GLCLIENT_LOG"
+        echo "."
+        ;;
+    restart)
+        $0 stop
+        sleep 2
+        $0 start
+        ;;
+    clean)
+        if test -e ${GLAUTH_PID}; then
+            echo "still running application, you must run ./init stop"
+            exit 1
+        fi
+        echo -n "Clean log, cache and pid files: "
+        rm -f ${GLAUTH_LOG}
+        rm -f ${MONITOR_LOG}
+        rm -f ${GLSERVER_LOG}
+        rm -f ${GLCLIENT_LOG}
+        rm -f ${APPDIR}/pid
+        rm -f ${APPDIR}/*.ses
+        rm -f ${APPDIR}/blob/*
+        rm -rf ${APPDIR}/cache
+        if [ -e ${APPDIR}/blob ]; then
+            for f in ${APPDIR}/blob/*; do
+                if [ ! -d $f ]; then
+                    rm -rf $f
+                fi
+            done
+        fi
+        echo "done."
+        ;;
+    *)
+        echo "Usage: init {start|stop|restart|client|killclient|clean}" >&2
+        exit 1
+        ;;
+esac
+
+unset COB_LIBRARY_PATH
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# End:

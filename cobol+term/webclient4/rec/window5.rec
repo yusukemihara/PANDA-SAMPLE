@@ -1,0 +1,36 @@
+window5	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+        label7 {
+        	l51	varchar(128);
+        };
+		scrolledwindow1 {
+		pandaclist1	{
+			count	int;
+			row	int;
+			item	{
+				value0	varchar(64);
+				value1	varchar(64);
+				value2	varchar(64);
+			}	[30];
+			select	bool[30];
+		};
+		};
+		scrolledwindow2 {
+		pandaclist2	{
+			count	int;
+			row	int;
+			item	{
+				value0	varchar(64);
+				value1	varchar(64);
+				value2	varchar(64);
+			}	[30];
+			select	bool[30];
+		};
+		};
+	};
+};

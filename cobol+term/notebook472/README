@@ -1,0 +1,39 @@
+= 4.7でのGtkNoteBookの変更
+
+4.7からGtkNoteBookのページ変更の仕組みを変更しました。
+
+変更点
+
+  * GtkNoteBookの画面定義体レコードのpagenoを、
+    従来は変更前のページ番号であったのを
+    変更後のページ番号に変更した。
+
+影響など
+
+  * 画面定義体
+    * タブにボタンを追加してボタンのclickedイベントで
+      変更後のページを判別していたが、これが不要になる
+  * COBOL
+    * タブのボタンが無くなるのでGtkNotebookのpagenoでページ遷移を
+      判定するよう変更が必要
+
+サンプル
+
+  * タブの変更のswitch_pageシグナルを受け取り変更後のpagenoをDISPLAYする
+
+= 動作方法
+
+== 起動
+
+$ make
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== クライアント設定
+
+アプリケーション指定 -> panda:notebook47
+ユーザパスワード -> sample:sample

@@ -1,0 +1,14 @@
+= PostScriptを表示するデモプログラム
+
+GtkPandaPS widgetを使い、あらかじめ用意してあるPostScriptを表示する。
+
+= 動作方法
+
+== 起動
+
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean

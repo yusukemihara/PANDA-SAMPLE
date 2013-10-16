@@ -1,0 +1,24 @@
+name    mcptemp;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+wfc {
+    port      ":9001";
+};
+
+blob {
+	space	"=/blob";
+	port	"/tmp/sysdata";
+};
+
+ld {
+	sample	1;
+};
+
+initial_ld	"sample";

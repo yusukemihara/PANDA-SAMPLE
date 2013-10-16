@@ -1,0 +1,16 @@
+        01  SCRAREA.
+            02  SCREENDATA.
+              03  CLIST.
+                04  SCROLLEDWINDOW1.
+                  05  HPOS    PIC S9(9)   BINARY.
+                  05  VPOS    PIC S9(9)   BINARY.
+                  05  PANDACLIST1.
+                    06  COUNT1   PIC S9(9)   BINARY.
+                    06  ROW1 PIC S9(9)   BINARY.
+                    06  ROWATTR1 PIC S9(9)   BINARY.
+                    06  ITEM1            OCCURS  100 TIMES.
+                      07  VALUE0  PIC X(12).
+                      07  VALUE1  PIC X(12).
+                      07  VALUE2  PIC X(12).
+                    06  SELECT1
+                            PIC X       OCCURS  100 TIMES.

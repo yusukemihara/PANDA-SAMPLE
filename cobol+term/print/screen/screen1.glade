@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<GTK-Interface>
+
+<project>
+  <name>screen1</name>
+  <program_name>screen1</program_name>
+  <directory></directory>
+  <pixmaps_directory>pixmaps</pixmaps_directory>
+  <gnome_support>True</gnome_support>
+  <gtkpanda_support>True</gtkpanda_support>
+</project>
+
+<widget>
+  <class>GtkWindow</class>
+  <name>screen1</name>
+  <width>400</width>
+  <height>200</height>
+  <signal>
+    <name>map_event</name>
+    <handler>map_event</handler>
+    <last_modification_time>Fri, 25 Jun 2010 00:43:42 GMT</last_modification_time>
+  </signal>
+  <signal>
+    <name>set_focus</name>
+    <handler>set_focus</handler>
+    <last_modification_time>Fri, 25 Jun 2010 00:43:42 GMT</last_modification_time>
+  </signal>
+  <signal>
+    <name>destroy</name>
+    <handler>window_destroy</handler>
+    <last_modification_time>Fri, 25 Jun 2010 05:27:20 GMT</last_modification_time>
+  </signal>
+  <title>screen1</title>
+  <type>GTK_WINDOW_TOPLEVEL</type>
+  <position>GTK_WIN_POS_NONE</position>
+  <modal>False</modal>
+  <default_width>400</default_width>
+  <default_height>200</default_height>
+  <allow_shrink>False</allow_shrink>
+  <allow_grow>True</allow_grow>
+  <auto_shrink>False</auto_shrink>
+
+  <widget>
+    <class>GtkFixed</class>
+    <name>fixed1</name>
+    <width>400</width>
+    <height>200</height>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button1</name>
+      <x>24</x>
+      <y>40</y>
+      <width>52</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Fri, 25 Jun 2010 00:45:50 GMT</last_modification_time>
+      </signal>
+      <label>1.pdf</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button2</name>
+      <x>104</x>
+      <y>40</y>
+      <width>52</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Fri, 25 Jun 2010 00:45:56 GMT</last_modification_time>
+      </signal>
+      <label>2.pdf</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button3</name>
+      <x>192</x>
+      <y>40</y>
+      <width>52</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Fri, 25 Jun 2010 00:46:00 GMT</last_modification_time>
+      </signal>
+      <label>3.pdf</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button4</name>
+      <x>24</x>
+      <y>88</y>
+      <width>52</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Fri, 25 Jun 2010 00:46:06 GMT</last_modification_time>
+      </signal>
+      <label>1.ps</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button5</name>
+      <x>96</x>
+      <y>88</y>
+      <width>52</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Fri, 25 Jun 2010 00:46:10 GMT</last_modification_time>
+      </signal>
+      <label>2.ps</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button6</name>
+      <x>176</x>
+      <y>88</y>
+      <width>52</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Fri, 25 Jun 2010 00:46:15 GMT</last_modification_time>
+      </signal>
+      <label>3.ps</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button7</name>
+      <x>288</x>
+      <y>136</y>
+      <width>80</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Fri, 25 Jun 2010 00:46:20 GMT</last_modification_time>
+      </signal>
+      <label>screen2</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button8</name>
+      <x>288</x>
+      <y>168</y>
+      <width>52</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>window_destroy</handler>
+	<last_modification_time>Fri, 25 Jun 2010 05:49:22 GMT</last_modification_time>
+      </signal>
+      <label>exit</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button9</name>
+      <x>272</x>
+      <y>40</y>
+      <width>52</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Mon, 28 Jun 2010 01:25:42 GMT</last_modification_time>
+      </signal>
+      <label>all pdf</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+
+    <widget>
+      <class>GtkPandaPrint</class>
+      <name>pandaprint1</name>
+      <x>352</x>
+      <y>16</y>
+      <width>24</width>
+      <height>24</height>
+    </widget>
+
+    <widget>
+      <class>GtkButton</class>
+      <name>button10</name>
+      <x>272</x>
+      <y>88</y>
+      <width>60</width>
+      <height>24</height>
+      <can_focus>True</can_focus>
+      <signal>
+	<name>clicked</name>
+	<handler>send_event</handler>
+	<last_modification_time>Mon, 28 Jun 2010 01:26:30 GMT</last_modification_time>
+      </signal>
+      <label>all ps</label>
+      <relief>GTK_RELIEF_NORMAL</relief>
+    </widget>
+  </widget>
+</widget>
+
+</GTK-Interface>

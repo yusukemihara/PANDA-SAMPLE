@@ -1,0 +1,9 @@
+download {
+	fixed1 {
+		download1 {
+			objectdata	object;
+			filename	varchar(256);
+            description	varchar(256);
+		};
+	};
+};

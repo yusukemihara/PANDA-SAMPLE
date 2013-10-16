@@ -1,0 +1,18 @@
+window1	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+		pandaentry1	{
+			entry1	varchar(256);
+		};
+		pandatimer1 {
+			duration int;
+		};
+		label1 {
+			labeldata1 varchar(256);
+		};
+	};
+};

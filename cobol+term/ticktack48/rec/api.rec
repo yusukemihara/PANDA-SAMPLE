@@ -1,0 +1,9 @@
+api {                             
+   arguments {                              
+       hoge                varchar(256);
+   };                                       
+   http_method             varchar(8);      
+   http_status             int;             
+   content_type            varchar(64);     
+   body                    object;          
+};

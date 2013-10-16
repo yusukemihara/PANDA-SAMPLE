@@ -1,0 +1,44 @@
+<data>
+  <record>
+    <record name="record1">
+      <string name="char1">char1</string>
+      <string name="varchar1">varchar1</string>
+      <int    name="int1">3</int>
+      <number  name="number1">3.1415</number>
+      <bool   name="bool1">true</bool>
+      <array  name="array1">
+        <int>1</int>
+        <int>2</int>
+        <int>3</int>
+      </array>
+    </record>
+  </record>
+  <record>
+    <record name="record1">
+      <string name="char1">キャラクタ2</string>
+      <string name="varchar1">ヴァーチャルキャラクタ2</string>
+      <int    name="int1">3</int>
+      <number  name="number1">3.14159265353846</number>
+      <bool   name="bool1">true</bool>
+      <array  name="array1">
+        <int>2</int>
+        <int>4</int>
+        <int>6</int>
+      </array>
+    </record>
+  </record>
+  <record>
+    <record name="record1">
+      <int    name="int1">3</int>
+      <string name="char1">キャラクタ3</string>
+      <number  name="number1">3.14159265353846</number>
+      <bool   name="bool1">true</bool>
+      <string name="varchar1">ヴァーチャルキャラクタ3</string>
+      <array  name="array1">
+        <int>3</int>
+        <int>6</int>
+        <int>9</int>
+      </array>
+    </record>
+  </record>
+</data>

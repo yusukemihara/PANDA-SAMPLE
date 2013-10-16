@@ -1,0 +1,42 @@
+window1	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+		scrolledwindow1	{
+			hpos	int;
+			vpos	int;
+			pandaclist1	{
+				count	int;
+				row	int;
+				item	{
+					value0	varchar(256);
+					value1	varchar(256);
+					value2	varchar(256);
+					value3	varchar(256);
+					value4	varchar(256);
+					value5	varchar(256);
+					value6	varchar(256);
+					value7	varchar(256);
+					value8	varchar(256);
+					value9	varchar(256);
+					value10	varchar(256);
+					value11	varchar(256);
+					value12	varchar(256);
+					value13	varchar(256);
+					value14	varchar(256);
+					value15	varchar(256);
+				}	[128];
+				select	bool[128];
+			};
+		};
+		pandaentry1	{
+			entry1	varchar(256);
+		};
+		pandaentry2	{
+			entry2	varchar(256);
+		};
+	};
+};

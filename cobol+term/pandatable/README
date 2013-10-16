@@ -1,0 +1,24 @@
+= GtkPandaTableのサンプル
+
+= 動作方法
+
+== 起動
+
+$ sudo /etc/init.d/jma-receipt stop
+$ make
+$ ./init start
+
+== 終了
+
+$ ./init stop
+
+== クライアント設定
+
+アプリケーション指定 -> panda:pandatable
+ユーザパスワード -> sample:sample
+
+== 動作概要
+
+テキスト列に入力された文字列をアイコン列に設定する。
+例えば2行目のテキストに"gtk-yes"を入力すると、アイコン列に"gtk-yes"のアイコンが設定される。
+また変更行の前景色、背景色を変更する。

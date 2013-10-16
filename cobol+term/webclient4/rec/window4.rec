@@ -1,0 +1,19 @@
+window4	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+		label1 {
+			l41		varchar(256);
+		};
+		pandacombo1	{
+			pandacombo_entry1	{
+				pe41	varchar(256);
+			};
+			count	int;
+			item	varchar(256)[10];
+		};
+	};
+};

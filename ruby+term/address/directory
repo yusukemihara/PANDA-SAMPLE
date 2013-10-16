@@ -1,0 +1,30 @@
+name            address;
+base            ".";
+ddir            "=/rec";
+record          "=/rec";
+multiplex_level no;
+linkage         link;
+
+wfc {
+    termport    ":9000";
+    port        ":9001";
+};
+
+control {
+};
+
+db_group {
+    type    "PostgreSQL";
+    port    "";
+    name    "address";
+};
+
+ld  {
+    address   1;
+};
+
+
+# Local Variables:
+# indent-tabs-mode: nil
+# tab-width: 4
+# End:

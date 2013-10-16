@@ -1,0 +1,19 @@
+entrytest	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+		e1	{
+			value1	varchar(256);
+			style	varchar(256);
+			editable bool;
+		};
+		ne1	{
+			value2	number(10);
+			style	varchar(256);
+			editable bool;
+		};
+	};
+};

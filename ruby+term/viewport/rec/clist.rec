@@ -1,0 +1,15 @@
+clist	{
+	swindow1	{
+		hpos	int;
+		vpos	int;
+		pclist1	{
+			count	int;
+			row	int;
+			item	{
+				value0	varchar(10);
+				value1	varchar(10);
+			}	[100];
+			select	bool[100];
+		};
+	};
+};

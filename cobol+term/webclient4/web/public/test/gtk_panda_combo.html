@@ -1,0 +1,38 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+<script src='../js/jquery-1.7.1.min.js' type='text/javascript'></script>
+<script src='../js/jquery-ui-1.8.18.custom.min.js' type="text/javascript"></script>
+<script src='../js/gtk_panda.js' type="text/javascript"></script>
+<link type="text/css" href="../css/gtk_panda.css" rel="Stylesheet" />
+
+<script type="text/javascript">
+$(function() {
+  var entry = $("#entry")
+    .GtkPandaEntry()
+    .GtkPandaEntry("option",{
+      input_mode:"ascii",
+      activate:function(n){
+        console.log(n);
+        console.log($("#entry").GtkPandaEntry("get_text"));
+      }
+    })
+    ;
+
+  var data = ["","01 あ","02 いう","03 えお","04 かきく"];
+  $("#combo").GtkPandaCombo()
+    .GtkPandaCombo("setEntry",entry)
+    .GtkPandaCombo("setPopdownStrings",data)
+    .GtkPandaCombo("option","state",0)
+    .GtkPandaCombo("option","width",100)
+    .GtkPandaCombo("option","height",30)
+    .GtkPandaCombo("deserialize",
+      {count:3,
+       item:["01 あ","02 i","03 u","04 e","05 moge"]})
+    .GtkPandaCombo("deserialize",
+      {item:["01 あ","02 i","03 u","04 e","05 moge"]})
+    ;
+});
+</script>
+
+<div id='combo'></div>
+<input id='entry'>

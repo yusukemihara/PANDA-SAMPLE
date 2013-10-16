@@ -1,0 +1,10 @@
+#!/bin/sh
+
+LDNAME="upload"
+
+source ../init
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# End:

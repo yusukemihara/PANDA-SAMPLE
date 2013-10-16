@@ -1,0 +1,89 @@
+sysdb	{
+	vbox2	{
+		hbox14	{
+			num	{
+				value	varchar(256);
+			};
+		};
+		hbox16	{
+			key1	{
+				value	varchar(256);
+			};
+			value1	{
+				value	varchar(256);
+			};
+		};
+		hbox17	{
+			key2	{
+				value	varchar(256);
+			};
+			value2	{
+				value	varchar(256);
+			};
+		};
+		hbox18	{
+			key3	{
+				value	varchar(256);
+			};
+			value3	{
+				value	varchar(256);
+			};
+		};
+		hbox19	{
+			key4	{
+				value	varchar(256);
+			};
+			value4	{
+				value	varchar(256);
+			};
+		};
+		hbox20	{
+			key5	{
+				value	varchar(256);
+			};
+			value5	{
+				value	varchar(256);
+			};
+		};
+		hbox23	{
+			key6	{
+				value	varchar(256);
+			};
+			value6	{
+				value	varchar(256);
+			};
+		};
+		hbox24	{
+			key7	{
+				value	varchar(256);
+			};
+			value7	{
+				value	varchar(256);
+			};
+		};
+		hbox25	{
+			key8	{
+				value	varchar(256);
+			};
+			value8	{
+				value	varchar(256);
+			};
+		};
+		hbox26	{
+			key9	{
+				value	varchar(256);
+			};
+			value9	{
+				value	varchar(256);
+			};
+		};
+		hbox27	{
+			key10	{
+				value	varchar(256);
+			};
+			value10	{
+				value	varchar(256);
+			};
+		};
+	};
+};

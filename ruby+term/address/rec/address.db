@@ -1,0 +1,33 @@
+address {
+	id		int;          
+	name	varchar(50); 
+	mail	varchar(50); 
+};
+
+primary {
+	id;
+};
+
+path item {
+	DBSELECT {
+		DECLARE address_cursor CURSOR FOR
+		SELECT * FROM address ORDER BY id, name, mail;
+	};
+	DBFETCH {
+		FETCH FORWARD 1 FROM address_cursor INTO :id, :name, :mail;
+	};
+	DBCLOSECURSOR {
+    	CLOSE address_cursor;  
+	};
+	DBUPDATE {
+		UPDATE address SET name = :name, mail = :mail WHERE id = :id;
+	};
+	DBINSERT {
+		INSERT INTO address (id, name, mail) VALUES (:id, :name, :mail);
+	};
+};
+
+# Local Variables:
+# indent-tabs-mode: nil
+# tab-width: 4
+# End:

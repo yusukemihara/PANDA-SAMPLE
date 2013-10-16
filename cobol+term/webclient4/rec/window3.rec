@@ -1,0 +1,27 @@
+window3	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+        label1 {
+			l31str	varchar(128);
+        };
+        label2 {
+			l32str	varchar(128);
+        };
+		numberentry1	{
+			number31	number(8,2);
+		};
+		pandaentry1	{
+			pe31str	varchar(64);
+		};
+		pandaentry2	{
+			pe32str	varchar(64);
+		};
+		pandaentry3	{
+			pe33str	varchar(64);
+		};
+	};
+};

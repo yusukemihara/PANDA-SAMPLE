@@ -1,0 +1,8 @@
+        01  SCRAREA.
+            02  VBOX2.
+              03  FILEENTRY1.
+                04  OBJECTDATA  PIC X(8).
+                04  ENTRY1.
+                  05  ENTRY-TEXT  PIC X(100).
+              03  PANDAPS1.
+                04  PSDATA  PIC X(8).

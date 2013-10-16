@@ -1,0 +1,10 @@
+#!/bin/bash -x
+
+LDNAME="notebook47"
+
+source ./initlib
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# End:

@@ -1,0 +1,8 @@
+list	{
+	argument {
+		max			int;
+	};
+	methodtype		varchar(10);
+	content_type	varchar(64);
+	body			object;
+}

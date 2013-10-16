@@ -1,0 +1,17 @@
+clist	{
+	scrolledwindow1	{
+		hpos	int;
+		vpos	int;
+		pandaclist1	{
+			count	int;
+			row	int;
+			rowattr int;
+			item 	{
+				value0	varchar(12);
+				value1	varchar(12);
+				value2	varchar(12);
+			}	[100];
+			select	bool[100];
+		};
+	};
+};
