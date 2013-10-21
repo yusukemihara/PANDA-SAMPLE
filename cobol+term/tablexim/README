@@ -1,0 +1,27 @@
+= pandatableの日本語入力自動起動
+
+チェックボタンをONにすると日本語入力自動起動がONになる
+
+= 対象環境
+
+ * <= panda-1.4.8~pre13
+
+= ビルド
+
+$ make
+
+= 動作方法
+
+== 起動
+
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== クライアント設定
+
+アプリケーション指定 -> panda:tablexim
+ユーザパスワード -> sample:sample
