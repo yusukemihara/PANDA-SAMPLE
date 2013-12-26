@@ -1,0 +1,4 @@
+        01  SCRAREA.
+            02  SCREENDATA.
+              03  SESSIONEND.
+                04  DUMMY   PIC X(256).

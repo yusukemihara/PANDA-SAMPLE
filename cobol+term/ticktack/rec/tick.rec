@@ -1,4 +1,4 @@
 tick	{
-	dummy text;
+	dummy varchar(256);
 };
 

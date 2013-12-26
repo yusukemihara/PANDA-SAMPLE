@@ -24,7 +24,7 @@
       ************************************************************************
        100-INIT                SECTION.
            DISPLAY 'TACK'
-           MOVE   SPACE      TO  MCP-PUTTYPE.
+           MOVE   'CURRENT'      TO  MCP-PUTTYPE.
            MOVE   'tack'     TO  MCP-WINDOW.
            PERFORM 900-PUT-WINDOW.
       ************************************************************************

@@ -51,5 +51,5 @@ SCRAREA: $(SCRREC) $(top_srcdir)/directory
 	fi
 
 %.so: %.CBL $(COBOL_DEPENDENCIES)
-	cobc -m -dynamic $<
+	cobc -m -dynamic -fixed -fimplicit-init -std=cobol85 $<
 	cp $@ $(top_srcdir)/cobol

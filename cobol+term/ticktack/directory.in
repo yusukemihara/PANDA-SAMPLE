@@ -22,3 +22,5 @@ ld {
 	tack		1;
 	sessionend	1;
 };
+
+initial_ld tick;

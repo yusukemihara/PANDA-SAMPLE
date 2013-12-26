@@ -7,6 +7,7 @@
        LINKAGE                 SECTION.
             COPY    "MCPAREA".
             COPY    "SPAAREA".
+            COPY    "SCRAREA".
             COPY    "LINKAREA".
       ************************************************************************
        PROCEDURE           DIVISION    USING
