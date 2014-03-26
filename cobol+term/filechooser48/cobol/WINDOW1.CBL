@@ -53,7 +53,9 @@
              MOVE   'BLOBEXPORT' TO  MCP-FUNC
              MOVE   'work'       TO  MCP-TABLE
              MOVE   'key'        TO  MCP-PATHNAME
-             MOVE   './cobol/tmp.dat' TO  DB-WORK-FILE
+             STRING './cobol/' MCP-TERM '.dat' 
+               DELIMITED BY SPACE
+               INTO DB-WORK-FILE
              CALL   'MONFUNC'     USING
                   MCPAREA
                   DB-WORK

@@ -9,7 +9,7 @@ LINKREC = $(top_srcdir)/rec/link.rec
 SPAREC = $(top_srcdir)/rec/spa.rec
 SCRREC = $(top_srcdir)/rec/window1.rec
 COBOL_DEPENDENCIES = MCPAREA SPAAREA LINKAREA SCRAREA DB-WORK
-CLEAN_FILES = $(COBOL_DEPENDENCIES)
+CLEAN_FILES = $(COBOL_DEPENDENCIES) *.dat
 
 include $(top_srcdir)/cobol/Makefile.common
 
