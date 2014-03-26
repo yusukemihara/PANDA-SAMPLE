@@ -1,0 +1,29 @@
+name    filechooser;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+initial_ld "filechooser";
+
+linkage link;
+
+wfc {
+    port      ":9001";
+};
+
+sysdata {
+    space   "=/blob";
+    port    "/tmp/sysdata";
+};
+
+
+db_group    "work" {
+    type    "NativeBLOB";
+};
+
+ld {
+	filechooser		1;
+};

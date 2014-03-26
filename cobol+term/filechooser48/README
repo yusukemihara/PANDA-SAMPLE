@@ -1,0 +1,34 @@
+= FileChooserボタンのサンプル
+
+画像を選択してuploadボタンをクリックすると画面に画像が表示される。
+その状態でexportボタンをクリックするとcobol/export.datに画像ファイルがエクスポートされる。
+
+薬剤情報処理の処理と同様
+
+= 対象環境
+
+ * panda-1.4.8
+
+= ビルド
+
+$ make
+
+= 動作方法
+
+== 起動
+
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== pandaの指定
+
+initlibのPATH,LD_LIBRARY_PATHで指定する。
+
+== クライアント設定
+
+アプリケーション指定 -> panda:filechooser
+ユーザパスワード -> sample:sample

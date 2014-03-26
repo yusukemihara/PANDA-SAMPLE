@@ -1,0 +1,16 @@
+window1	{
+	title	varchar(256);
+	popup_summary	varchar(256);
+	popup_body	varchar(1024);
+	popup_icon	varchar(256);
+	popup_timeout	int;
+	fixed1	{
+		fcb1 {
+			objectdata	object;
+			filename	varchar(256);
+		};	
+		pixmap1	{
+			objectdata	object;
+		};
+	};
+};
