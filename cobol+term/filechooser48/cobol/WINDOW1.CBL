@@ -68,7 +68,7 @@
                   DB-WORK
 
              MOVE DB-WORK-OBJECT TO OBJECTDATA OF PIXMAP1 
-             MOVE './cobol/tmp.dat' TO  SPA-TMPFILE
+             MOVE DB-WORK-FILE TO  SPA-TMPFILE
 
            ELSE
              MOVE LOW-VALUE TO OBJECTDATA OF PIXMAP1
