@@ -1,7 +1,7 @@
-#PATH=/usr/lib/panda/bin:/usr/lib/panda/sbin:$PATH
-#PATH=/usr/local/bin:/usr/local/sbin:$PATH
-PATH=/tmp/opt/bin:/tmp/opt/sbin:/usr/local/bin:/usr/local/sbin:$PATH
-LD_LIBRARY_PATH=/tmp/opt/lib
+PATH=/usr/lib/panda/bin:/usr/lib/panda/sbin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:$PATH
+#PATH=/tmp/opt/bin:/tmp/opt/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+#LD_LIBRARY_PATH=/tmp/opt/lib
 
 if [ ! -e directory ]; then
     echo "'directory' not found. You must run make."
