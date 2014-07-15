@@ -1,0 +1,19 @@
+shell {
+	name	varchar(256);
+	arg1	varchar(256);
+	arg2	varchar(256);
+	arg3	varchar(256);
+	arg4	varchar(256);
+	arg5	varchar(256);
+	arg6	varchar(256);
+	arg7	varchar(256);
+	arg8	varchar(256);
+};
+
+path shell {
+	SHELL {
+		echo :name :arg1 :arg2 :arg3 :arg4 :arg5 :arg6 :arg7 :arg8;
+		pwd;
+		:name :arg1 :arg2 :arg3 :arg4 :arg5 :arg6 :arg7 :arg8;
+	};
+};

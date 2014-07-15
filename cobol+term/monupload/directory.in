@@ -1,0 +1,29 @@
+name    env48;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+initial_ld monupload;
+
+wfc {
+    port      ":9001";
+};
+
+sysdata {
+    space   "=/blob";
+    port    "/tmp/sysdata";
+};
+
+db_group "shell" {
+	type "Shell";
+	priority 1000;
+};
+
+ld {
+	monupload		1;
+};
