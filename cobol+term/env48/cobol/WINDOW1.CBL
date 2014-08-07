@@ -44,6 +44,12 @@
 
            DISPLAY '================'.
 
+           ACCEPT ENVVAL FROM ENVIRONMENT 'MCP_MIDDLEWARE_NAME'.
+           DISPLAY 'middleware_name: ' ENVVAL.
+
+           ACCEPT ENVVAL FROM ENVIRONMENT 'MCP_MIDDLEWARE_VERSION'.
+           DISPLAY 'middleware_version: ' ENVVAL.
+
            ACCEPT ENVVAL FROM ENVIRONMENT 'MCP_TERM'.
            DISPLAY 'term: ' ENVVAL.
 
