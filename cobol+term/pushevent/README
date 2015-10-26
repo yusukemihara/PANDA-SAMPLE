@@ -1,0 +1,47 @@
+= PushAPIテストプログラム
+
+PushAPI用のDBライブラリPushEventのテストプログラムです。
+
+= 準備
+
+以下のパッケージをインストールします。
+
+% sudo apt-get install librabbitmq-dev librabbitmq1 rabbitmq-server
+
+またpanda-serverも1.4.9+p19以降である必要があります。
+イベント受信のテストプログラムのamqp_listen.cをビルドします。
+
+% ./amqp_listen.c
+
+実行ファイル amqp_listen ができればビルド成功です。
+
+= テスト概要
+
+glclient2の画面からPushEventでPushAPIのイベントを発行します。
+以下の流れでamqp_listenにイベントが通知されます。
+
+glclient2 -> APS[ COBOL -> PushEvent.so ] -> amqp server(rabbitmq) -> amqp_listen
+
+= 動作方法
+
+== ビルド
+
+$ make
+
+== 起動
+
+$ sudo service jma-receipt stop
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== クライアント設定
+
+ホスト:ポート
+localhost:8000
+
+ユーザ:パスワード
+sample:sample

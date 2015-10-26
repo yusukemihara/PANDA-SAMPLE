@@ -1,0 +1,28 @@
+name    test1;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+initial_ld test1;
+
+wfc {
+    port      ":9001";
+};
+
+blob {
+	space	"=/blob";
+	port	"/tmp/sysdata";
+};
+
+db_group "push" {
+	type	"PushEvent";
+};
+
+ld {
+	test1	1;
+};

@@ -1,0 +1,18 @@
+window1 { #GtkWindow
+  title varchar(256);
+  popup_summary varchar(256);
+  popup_body varchar(256);
+  popup_icon varchar(256);
+  popup_timeout int;
+  fixed1 { #GtkFixed
+    entry1 { #GtkPandaEntry
+      textdata varchar(256);
+    };
+    entry2 { #GtkPandaEntry
+      textdata varchar(256);
+    };
+    entry3 { #GtkPandaEntry
+      textdata varchar(256);
+    };
+  };
+};

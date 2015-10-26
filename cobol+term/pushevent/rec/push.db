@@ -1,0 +1,7 @@
+push {
+    event		varchar(256);
+	body {
+		id		varchar(256);
+		comment	varchar(256);
+	};
+};
