@@ -28,10 +28,14 @@ glclient2 -> APS[ COBOL -> PushEvent.so ] -> amqp server(rabbitmq) -> amqp_liste
 
 $ make
 
-== 起動
+== サーバ起動
 
 $ sudo service jma-receipt stop
 $ ./init start
+
+== 通知受信テストプログラム起動
+
+$ ./amqp_listen localhost 5672 amq.topic tenant.*.* test
 
 == 終了
 
