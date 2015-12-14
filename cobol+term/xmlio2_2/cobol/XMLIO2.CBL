@@ -52,7 +52,10 @@
            IF (MCP-RC = ZERO OR 1)
                CONTINUE
            ELSE
-               DISPLAY "XMLOPEN failure"
+               DISPLAY "XMLOPEN1 failure"
+               MOVE ZERO TO SCR-BODY
+               MOVE 400 TO SCR-HTTP-STATUS
+               EXIT
            END-IF.
            MOVE DB-XML2-CONTEXT TO IN-CONTEXT.
            DISPLAY 'input XMLOPEN end' 
@@ -67,7 +70,10 @@
            IF (MCP-RC = ZERO OR 1)
                CONTINUE
            ELSE
-               DISPLAY "XMLOPEN failure"
+               DISPLAY "XMLOPEN2 failure"
+               MOVE ZERO TO SCR-BODY
+               MOVE 400 TO SCR-HTTP-STATUS
+               EXIT
            END-IF.
            MOVE DB-XML2-CONTEXT TO OUT-CONTEXT.
            DISPLAY 'output XMLOPEN end' 
@@ -80,6 +86,15 @@
                 MCPAREA
                 DB-XML2
            MOVE MCP-RC TO RC
+           IF (MCP-RC = ZERO OR 1)
+               DISPLAY 'XMLREAD end' 
+               CONTINUE
+           ELSE
+               DISPLAY "XMLREAD failure"
+               MOVE ZERO TO SCR-BODY
+               MOVE 400 TO SCR-HTTP-STATUS
+               EXIT
+           END-IF.
 
            DISPLAY 'recordname:' DB-XML2-RECORDNAME
            DISPLAY 'xml readend' 
@@ -94,6 +109,15 @@
            DISPLAY DB-XML2-OBJECT
            DISPLAY SCR-BODY
            DISPLAY 'xml writeend' 
+           IF (MCP-RC = ZERO OR 1)
+               DISPLAY 'XMLWRITE end' 
+               CONTINUE
+           ELSE
+               DISPLAY "XMLWRITE failure"
+               MOVE ZERO TO SCR-BODY
+               MOVE 400 TO SCR-HTTP-STATUS
+               EXIT
+           END-IF.
 
            MOVE   'XMLCLOSE' TO  MCP-FUNC
            MOVE   IN-CONTEXT TO DB-XML2-CONTEXT
@@ -105,6 +129,9 @@
                CONTINUE
            ELSE
                DISPLAY "XMLCLOSE failure"
+               MOVE ZERO TO SCR-BODY
+               MOVE 400 TO SCR-HTTP-STATUS
+               EXIT
            END-IF.
 
            MOVE   'XMLCLOSE' TO  MCP-FUNC
@@ -116,6 +143,9 @@
                DISPLAY 'XMLCLOSE end' 
            ELSE
                DISPLAY "XMLCLOSE failure"
+               MOVE ZERO TO SCR-BODY
+               MOVE 400 TO SCR-HTTP-STATUS
+               EXIT
            END-IF.
 
            EXIT.
