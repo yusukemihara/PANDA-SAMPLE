@@ -1,0 +1,25 @@
+name    session;
+
+base    "%PWD%";
+ddir    "=/rec";
+record  "=/rec";
+
+multiplex_level no;
+
+linkage link;
+
+wfc {
+    port      ":9001";
+};
+
+sysdata {
+    space   "=/blob";
+    port    "/tmp/sysdata";
+};
+
+initial_ld	window1;
+
+ld {
+	window1		1;
+	session		1;
+};

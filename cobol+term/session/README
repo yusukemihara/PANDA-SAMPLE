@@ -1,0 +1,39 @@
+= タイマーでウィンドウを切り替えるプログラム(日レセ4.8)
+
+tickからtackへ。tackからtickへ。
+クライアント終了時に FINALIZE モジュールが実行される。
+
+日レセ4.8での以下の変更のテスト用
+
+* 認証をAPI session/session_start で行う
+** glserver -auth api://hogehogeに変更
+* sessionend/sessionend を session/session_end に変更
+* APIのrecのメンバー名変更
+** argument -> arguments
+** methodtype -> http_method
+** httpstatus -> http_status
+
+= ビルド
+
+$ cd ticktack48
+$ make
+
+= 動作方法
+
+== 起動
+
+$ ./init start
+
+== 終了
+
+$ ./init stop
+$ ./init clean
+
+== pandaの指定
+
+initlibのPATH,LD_LIBRARY_PATHで指定する。
+
+== クライアント設定
+
+アプリケーション指定 -> panda:tick
+ユーザパスワード -> sample:sample
