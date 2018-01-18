@@ -1,0 +1,18 @@
+msg {
+    object			object;
+	mode 			int;
+
+	data {
+		c1		char(128);
+		i1		int;
+		n1		number(7,3);
+		b1		bool;
+		a1		int[3];
+ 		r1 {
+			r1c1		char(128);
+			r2 {
+				r2c1	char(128);
+			};
+		}[3];
+	};
+};
