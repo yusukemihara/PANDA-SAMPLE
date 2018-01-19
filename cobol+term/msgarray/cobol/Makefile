@@ -1,6 +1,7 @@
 APPLICATIONS = 	\
 	TEST1.so	\
-	TEST2.so
+	TEST2.so	\
+	TEST3.so
 
 top_srcdir = ../
 LDNAME = test1

@@ -21,6 +21,14 @@ $ ruby write.rb
 事前にread_json.rbを実行するとJSONデータが返却される。
 read_xml.rbを実行するとXMLデータが返却される。
 
+## test3
+
+POST http://localhost:8000/test1/test3
+
+POSTされたJSONまたはXMLを読み込んでUNESCAPEして返却する。
+
+$ ruby unescape.rb
+
 # 動作方法
 
 ## 準備

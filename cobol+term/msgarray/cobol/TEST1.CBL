@@ -39,13 +39,13 @@
 
            MOVE 500 TO SCR-HTTP-STATUS
 
-           DISPLAY 'msgarrayopen'
+           DISPLAY 'msgyopen'
            DISPLAY SCR-BODY
-           MOVE 'MSGARRAYOPEN' TO MCP-FUNC
-           MOVE 'msg1'         TO MCP-TABLE
-           MOVE 0              TO DB-MSG-MODE
-           MOVE SCR-BODY       TO DB-MSG-OBJECT
-           CALL 'MONFUNC'      USING
+           MOVE 'MSGOPEN' TO MCP-FUNC
+           MOVE 'msg1'    TO MCP-TABLE
+           MOVE 0         TO DB-MSG-MODE
+           MOVE SCR-BODY  TO DB-MSG-OBJECT
+           CALL 'MONFUNC' USING
                 MCPAREA
                 DB-MSG
            IF (MCP-RC = ZERO)
@@ -56,9 +56,9 @@
            END-IF
 
            PERFORM WITH TEST AFTER UNTIL (MCP-RC NOT = ZERO)
-               DISPLAY 'msgarrayread'
-               MOVE 'MSGARRAYREAD' TO MCP-FUNC
-               CALL 'MONFUNC'      USING
+               DISPLAY 'msgread'
+               MOVE 'MSGREAD'  TO MCP-FUNC
+               CALL 'MONFUNC' USING
                     MCPAREA
                     DB-MSG
                IF (MCP-RC = ZERO)
@@ -67,9 +67,9 @@
                END-IF
            END-PERFORM
 
-           DISPLAY 'msgarrayclose'
-           MOVE 'MSGARRAYCLOSE' TO MCP-FUNC
-           CALL 'MONFUNC'      USING
+           DISPLAY 'msgclose'
+           MOVE 'MSGCLOSE' TO MCP-FUNC
+           CALL 'MONFUNC'  USING
                 MCPAREA
                 DB-MSG
            IF (MCP-RC = ZERO)

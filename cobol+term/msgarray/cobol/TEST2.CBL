@@ -41,11 +41,11 @@
            MOVE 500 TO SCR-HTTP-STATUS2
            MOVE ZERO TO SCR-BODY2
 
-           DISPLAY 'msgarrayopen'
-           MOVE 'MSGARRAYOPEN' TO MCP-FUNC
-           MOVE 'msg1'         TO MCP-TABLE
-           MOVE 1              TO DB-MSG-MODE
-           CALL 'MONFUNC'      USING
+           DISPLAY 'msgopen'
+           MOVE 'MSGOPEN' TO MCP-FUNC
+           MOVE 'msg1'    TO MCP-TABLE
+           MOVE 1         TO DB-MSG-MODE
+           CALL 'MONFUNC' USING
                 MCPAREA
                 DB-MSG
            IF (MCP-RC = ZERO)
@@ -57,7 +57,7 @@
 
            PERFORM VARYING L FROM 1 BY 1 UNTIL L > 5
                DISPLAY ' '
-               DISPLAY 'msgarraywrite ' L
+               DISPLAY 'msgwrite ' L
                MOVE 'DB-MSG-C1'     TO DB-MSG-C1
                MOVE L               TO DB-MSG-I1
                MOVE L               TO DB-MSG-N1
@@ -72,8 +72,8 @@
                MOVE 'DB-MSG-R2C1'   TO DB-MSG-R2C1(2)
                MOVE 'DB-MSG-R2C1'   TO DB-MSG-R2C1(3)
 
-               MOVE 'MSGARRAYWRITE' TO MCP-FUNC
-               CALL 'MONFUNC'      USING
+               MOVE 'MSGWRITE' TO MCP-FUNC
+               CALL 'MONFUNC'  USING
                     MCPAREA
                     DB-MSG
                IF (MCP-RC = ZERO)
@@ -86,9 +86,9 @@
        LOOPEND.
 
            DISPLAY ' '
-           DISPLAY 'msgarrayclose'
-           MOVE 'MSGARRAYCLOSE' TO MCP-FUNC
-           CALL 'MONFUNC'      USING
+           DISPLAY 'msgclose'
+           MOVE 'MSGCLOSE' TO MCP-FUNC
+           CALL 'MONFUNC'  USING
                 MCPAREA
                 DB-MSG
            IF (MCP-RC = ZERO)

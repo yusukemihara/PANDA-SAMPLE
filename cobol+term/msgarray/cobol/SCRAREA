@@ -14,3 +14,10 @@
                 04  SCR-CONTENT-TYPE2    PIC X(100).
                 04  SCR-BODY2    PIC X(8).
                 04  SCR-HTTP-STATUS2 PIC S9(9)   BINARY.
+              03  SCR-TEST3.
+                04  SCR-ARGUMENTS3.
+                  05  SCR-ARG3    PIC X(100).
+                04  SCR-HTTP-METHOD3 PIC X(100).
+                04  SCR-CONTENT-TYPE3    PIC X(100).
+                04  SCR-BODY3    PIC X(8).
+                04  SCR-HTTP-STATUS3 PIC S9(9)   BINARY.
