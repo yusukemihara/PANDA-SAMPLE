@@ -33,6 +33,10 @@ $ ruby unescape.rb
 
 ## 準備
 
+makeしてdirectoryを作成
+
+$ make
+
 実行するUnixユーザと同じDBユーザを作成し、pandatestというDBを作成しておく。
 
 $ cd msgarray

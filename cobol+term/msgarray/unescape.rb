@@ -3,6 +3,7 @@
 
 require 'pp'
 require 'uri'
+require 'json'
 require 'net/http'
 
 Net::HTTP.version_1_2
@@ -91,6 +92,6 @@ req.basic_auth("sample", "sample")
   Net::HTTP.start("localhost", 8000) {|http|
     res = http.request(req)
     puts res.code
-    puts res.body
+    pp JSON.parse(res.body)
   }
 }

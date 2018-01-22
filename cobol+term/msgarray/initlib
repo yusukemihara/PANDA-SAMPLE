@@ -4,7 +4,6 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 PATH=/tmp/opt/bin://tmp/opt/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 LD_LIBRARY_PATH=/tmp/opt//lib
 LD_NAME=test1
-#export LD_PRELOAD=/home/mihara/montsuqi/libmondai/src/.libs/libmondai.so.2.0.0
 
 if [ "x$LD_NAME" = "x" ]; then
     echo "LD_NAME must be set in script"
@@ -48,7 +47,7 @@ case "$1" in
         echo $! > "$WFC_PID"
         sleep 1
         aps $LD_NAME> "$APS_LOG" 2>&1 &
-        #valgrind --leak-check=full aps $LD_NAME> "$APS_LOG" 2>&1 &
+#        valgrind --leak-check=full aps $LD_NAME> "$APS_LOG" 2>&1 &
         echo $! > "$APS_PID"
         sleep 1
         glserver -api -auth file:///`pwd`/passwd -screen $SCREENDIR -record $RECORDDIR >> "$GLSERVER_LOG" 2>&1 &
