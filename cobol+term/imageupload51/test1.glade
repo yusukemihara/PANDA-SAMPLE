@@ -83,6 +83,29 @@
           <handler>send_event</handler>
         </signal>
       </widget>
+      <widget>
+        <class>GtkButton</class>
+        <name>button2</name>
+        <x>286</x>
+        <y>257</y>
+        <width>100</width>
+        <height>80</height>
+        <visible>True</visible>
+        <sensitive>True</sensitive>
+        <can_focus>True</can_focus>
+        <has_focus>False</has_focus>
+        <receives_default>True</receives_default>
+        <border_width>0</border_width>
+        <label>exit</label>
+        <relief>GTK_RELIEF_NORMAL</relief>
+        <xalign>0.5</xalign>
+        <yalign>0.5</yalign>
+        <response_id>0</response_id>
+        <signal>
+          <name>clicked</name>
+          <handler>window_destroy</handler>
+        </signal>
+      </widget>
     </widget>
   </widget>
 </GTK-Interface>

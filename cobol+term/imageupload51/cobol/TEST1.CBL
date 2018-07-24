@@ -55,7 +55,7 @@
                 DB-BLOB.
            MOVE   LOW-VALUE
                                TO  UPDATA.
-           PERFORM 800-SET-PIXMAP.
+           PERFORM 850-SET-PIXMAP2.
            PERFORM 900-PUT-WINDOW.
       **************************************************************************
        900-PUT-WINDOW          SECTION.
@@ -68,6 +68,24 @@
            MOVE   'blob'       TO  MCP-TABLE.
            MOVE   'key'        TO  MCP-PATHNAME.
            MOVE   './cobol/demo.png'
+                               TO  DB-BLOB-FILE.
+           CALL   'MONFUNC'     USING
+                MCPAREA
+                DB-BLOB.
+           DISPLAY 'DB-BLOB-OBJECT:'.
+           DISPLAY DB-BLOB-OBJECT.
+           MOVE   LOW-VALUE
+                               TO  UPDATA.
+           MOVE   ALL SPACE
+                               TO  FNAME.
+           MOVE   DB-BLOB-OBJECT
+                               TO  DOWNDATA.
+      **************************************************************************
+       850-SET-PIXMAP2         SECTION.
+           MOVE   'BLOBIMPORT' TO  MCP-FUNC.
+           MOVE   'blob'       TO  MCP-TABLE.
+           MOVE   'key'        TO  MCP-PATHNAME.
+           MOVE   './cobol/uploaded.png'
                                TO  DB-BLOB-FILE.
            CALL   'MONFUNC'     USING
                 MCPAREA
