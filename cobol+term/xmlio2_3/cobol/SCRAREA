@@ -1,9 +1,0 @@
-        01  SCRAREA.
-            02  SCR-SCREENDATA.
-              03  SCR-TEST1.
-                04  SCR-ARGUMENTS.
-                  05  SCR-REQSTATUS   PIC X(100).
-                04  SCR-HTTP-METHOD PIC X(100).
-                04  SCR-CONTENT-TYPE    PIC X(100).
-                04  SCR-BODY    PIC X(36).
-                04  SCR-HTTP-STATUS PIC S9(9)   BINARY.

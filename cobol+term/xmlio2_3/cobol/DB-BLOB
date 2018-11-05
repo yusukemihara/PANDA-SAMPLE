@@ -1,4 +1,0 @@
-        01  DB-BLOB.
-            02  DB-BLOB-OBJECT  PIC X(36).
-            02  DB-BLOB-FILE    PIC X(256).
-            02  FILLER      PIC X(808).
