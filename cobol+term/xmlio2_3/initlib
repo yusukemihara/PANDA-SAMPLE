@@ -54,7 +54,8 @@ case "$1" in
         glserver -api -auth file:///`pwd`/passwd -screen $SCREENDIR -record $RECORDDIR >> "$GLSERVER_LOG" 2>&1 &
         #valgrind glserver -api -auth file:///`pwd`/passwd -screen $SCREENDIR -record $RECORDDIR >> "$GLSERVER_LOG" 2>&1 &
         echo $! > "$GLSERVER_PID"
-        echo "."
+        echo "... sleep for panda process"
+        sleep 100000
         ;;
     stop)
         $0 clean

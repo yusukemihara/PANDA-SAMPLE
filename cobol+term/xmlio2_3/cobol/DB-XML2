@@ -1,0 +1,16 @@
+        01  DB-XML2.
+            02  DB-XML2-CONTEXT PIC S9(9)   BINARY.
+            02  DB-XML2-OBJECT  PIC X(36).
+            02  DB-XML2-MODE    PIC S9(9)   BINARY.
+            02  DB-XML2-RECORDNAME  PIC X(128).
+            02  DB-XML2-BODY.
+              03  DB-XML2-C1  PIC X(128).
+              03  DB-XML2-I1  PIC S9(9)   BINARY.
+              03  DB-XML2-N1  PIC S9(5)V9(10).
+              03  DB-XML2-B1  PIC X.
+              03  DB-XML2-A1
+                      PIC S9(9)   BINARY  OCCURS  3 TIMES.
+              03  DB-XML2-R1      OCCURS  3 TIMES.
+                04  DB-XML2-R1C1    PIC X(128).
+                04  DB-XML2-R2.
+                  05  DB-XML2-R2C1    PIC X(128).

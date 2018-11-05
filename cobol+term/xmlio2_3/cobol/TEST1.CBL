@@ -37,60 +37,13 @@
        020-POST               SECTION.
            DISPLAY '020-POST start' 
 
-           DISPLAY 'xmlopen'
-           MOVE   'XMLOPEN' TO  MCP-FUNC.
-           MOVE   'xml2'    TO  MCP-TABLE.
-           MOVE   'key'     TO  MCP-PATHNAME.
-           MOVE   SCR-BODY  TO  DB-XML2-OBJECT.
-           MOVE   0         TO  DB-XML2-MODE.
-           CALL   'MONFUNC' USING
-                MCPAREA
-                DB-XML2
-           IF (MCP-RC = ZERO OR 1)
-               DISPLAY "...ok"
-           ELSE
-               DISPLAY "...ng"
-               MOVE ZERO TO SCR-BODY
-               MOVE 400 TO SCR-HTTP-STATUS
-               EXIT
-           END-IF
-
            DISPLAY 'xmlread' 
            MOVE   'XMLREAD' TO  MCP-FUNC
+           MOVE   0          TO  DB-XML2-MODE
+           MOVE   'xml2'    TO  MCP-TABLE
+           MOVE   'key'      TO  MCP-PATHNAME
+           MOVE   SCR-BODY   TO  DB-XML2-OBJECT
            CALL   'MONFUNC'     USING
-                MCPAREA
-                DB-XML2
-           IF (MCP-RC = ZERO OR 1)
-               DISPLAY "...ok"
-           ELSE
-               DISPLAY "...ng"
-               MOVE ZERO TO SCR-BODY
-               MOVE 400 TO SCR-HTTP-STATUS
-               EXIT
-           END-IF
-
-           DISPLAY 'xmlclose' 
-           MOVE   'XMLCLOSE' TO  MCP-FUNC
-           CALL   'MONFUNC'     USING
-                MCPAREA
-                DB-XML2.
-           IF (MCP-RC = ZERO OR 1)
-               DISPLAY "...ok"
-               CONTINUE
-           ELSE
-               DISPLAY "...ng"
-               MOVE ZERO TO SCR-BODY
-               MOVE 400 TO SCR-HTTP-STATUS
-               EXIT
-           END-IF
-
-           DISPLAY 'xmlopen'
-           MOVE   'XMLOPEN' TO  MCP-FUNC.
-           MOVE   'xml2'    TO  MCP-TABLE.
-           MOVE   'key'     TO  MCP-PATHNAME.
-           MOVE   SCR-BODY  TO  DB-XML2-OBJECT.
-           MOVE   1         TO  DB-XML2-MODE.
-           CALL   'MONFUNC' USING
                 MCPAREA
                 DB-XML2
            IF (MCP-RC = ZERO OR 1)
@@ -104,27 +57,15 @@
 
            DISPLAY 'xmlwrite' 
            MOVE   'XMLWRITE' TO  MCP-FUNC
+           MOVE   'xml2'     TO  MCP-TABLE
+           MOVE   'key'      TO  MCP-PATHNAME
+           MOVE   1          TO  DB-XML2-MODE
            CALL   'MONFUNC'     USING
                 MCPAREA
                 DB-XML2
            IF (MCP-RC = ZERO OR 1)
                DISPLAY "...ok"
                MOVE DB-XML2-OBJECT TO SCR-BODY
-           ELSE
-               DISPLAY "...ng"
-               MOVE ZERO TO SCR-BODY
-               MOVE 400 TO SCR-HTTP-STATUS
-               EXIT
-           END-IF
-
-           DISPLAY 'xmlclose' 
-           MOVE   'XMLCLOSE' TO  MCP-FUNC
-           CALL   'MONFUNC'     USING
-                MCPAREA
-                DB-XML2.
-           IF (MCP-RC = ZERO OR 1)
-               DISPLAY "...ok"
-               CONTINUE
            ELSE
                DISPLAY "...ng"
                MOVE ZERO TO SCR-BODY
