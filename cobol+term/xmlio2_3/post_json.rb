@@ -28,35 +28,43 @@ xml2 {
 	};
 };
 =end
+        #"r1i1":[1,2,3,4,5,6],
 
 body = <<EOF
 {
   "body":{
     "c1":"c1",
-    "i1":1,
+    "i1":13234,
     "n1":3.14,
     "b1":true,
-    "a1":[0,1,2],
+    "a1":[0,0,2],
     "r1":[
       {
+        "r1i1":[1,2,3,4,5,6],
+        "r1c1":"r1c1 0",
         "r2":{
-          "r2c1":"r2c1 0"
+          "r2c1":""
         }
       },
       {
         "r2":{
-          "r2c1":"r2c1 1"
+          "r2c1":""
         }
       },
       {
         "r2":{
-          "r2c1":"r2c1 2"
+          "r2c1":""
         }
       }
     ]
   }
 }
 EOF
+
+#body = <<EOF
+#{
+#}
+#EOF
 
 req = Net::HTTP::Post.new("/test1/test1")
 req.content_type = "application/json"

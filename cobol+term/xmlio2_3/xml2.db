@@ -11,6 +11,7 @@ xml2 {
 		b1		bool;
 		a1		int[3];
  		r1 {
+            r1i1        int[10];
 			r1c1		char(128);
 			r2 {
 				r2c1	char(128);
