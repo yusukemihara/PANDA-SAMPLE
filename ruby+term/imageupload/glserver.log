@@ -1,9 +1,0 @@
-===== start[upload] =======================================
-2008/03/04/09:53:57 P:glserver.c:129:glserver start
-2008/03/04/09:54:08 P:server.c:452:[sample@localhost] session start
-2008/03/04/09:54:08 P:server.c:464:[sample@localhost] client authenticated
-2008/03/04/09:54:33 P:server.c:598:[sample@localhost] abnormal client termination
-2008/03/04/09:54:33 P:server.c:69:[sample@localhost] session end
-2008/03/05/18:25:15 P:server.c:452:[sample@localhost] session start
-2008/03/05/18:25:15 P:server.c:464:[sample@localhost] client authenticated
-can't connect wfc
