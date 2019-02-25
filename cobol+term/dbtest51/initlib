@@ -32,8 +32,8 @@ export PATH=/tmp/opt/bin:/tmp/opt/sbin:$PATH
 export LD_LIBRARY_PATH=/tmp/opt/lib:/tmp/opt/lib/panda
 export COB_LIBRARY_PATH=${APPDIR}/cobol:/tmp/opt/lib:/tmp/opt/lib/panda
 
-export MON_DB_REC_MEM_SAVE=0
-export MON_SCR_REC_MEM_SAVE=0
+export MON_DB_REC_MEM_SAVE=1
+export MON_SCR_REC_MEM_SAVE=1
 
 #set -e
 

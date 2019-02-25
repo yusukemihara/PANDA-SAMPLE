@@ -10,13 +10,13 @@ primary {
 path all {
   DBSELECT {
     DECLARE dbtest_all_csr CURSOR FOR
-    SELECT * FROM dbtest ORDER BY ID;
+    SELECT * FROM dbtest ORDER BY uuid;
   };
 };
 
 path key {
   DBSELECT {
-    DECLARE dbtest_all_csr CURSOR FOR
+    DECLARE dbtest_key_csr CURSOR FOR
     SELECT * FROM dbtest WHERE uuid = :uuid;
   };
   DBINSERT {

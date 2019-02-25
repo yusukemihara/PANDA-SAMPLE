@@ -17,6 +17,8 @@
            LINKAREA
            SCRAREA.
        000-MAIN                SECTION.
+           INITIALIZE DBTEST.
+           MOVE   'NEW'        TO  MCP-PUTTYPE.
            DISPLAY 'MCP-STATUS:' MCP-STATUS.
            DISPLAY 'MCP-WINDOW:' MCP-WINDOW.
            DISPLAY 'MCP-WIDGET:' MCP-WIDGET.
@@ -47,7 +49,14 @@
            DISPLAY '----SELECT'.
            DISPLAY 'TEXT1:' PANDAENTRY1.
            DISPLAY 'TEXT2:' PANDAENTRY2.
+           MOVE PANDAENTRY1 TO DBTEST-UUID.
            MOVE 'DBSELECT' TO MCP-FUNC.
+           MOVE 'dbtest' TO MCP-TABLE.
+           MOVE 'key' TO MCP-PATHNAME.
+           CALL   'MONFUNC'     USING
+                MCPAREA
+                DBTEST.
+           MOVE 'DBFETCH' TO MCP-FUNC.
            MOVE 'dbtest' TO MCP-TABLE.
            MOVE 'key' TO MCP-PATHNAME.
            CALL   'MONFUNC'     USING
