@@ -19,6 +19,12 @@ blob {
 	port	"/tmp/sysdata";
 };
 
+db_group {
+    type "PostgreSQL";
+    name "pandatest";
+    port "";
+};
+
 db_group "push" {
 	type	"PushEvent";
 };

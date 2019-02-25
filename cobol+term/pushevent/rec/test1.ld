@@ -13,3 +13,7 @@ data {
 db "push" {
 	push;
 };
+
+db {
+  dbtest;
+};

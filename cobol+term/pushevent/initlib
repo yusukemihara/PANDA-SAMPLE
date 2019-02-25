@@ -31,6 +31,10 @@ GLSERVER_PID="$APPDIR/glserver.pid"
 
 export COB_LIBRARY_PATH=${APPDIR}/cobol:$HOME/local/lib:/usr/local/lib:/usr/lib:/usr/lib/panda:/opt/panda/lib
 
+export PATH=/tmp/opt/bin:/tmp/opt/sbin:$PATH
+export LD_LIBRARY_PATH=/tmp/opt/lib:/tmp/opt/lib/panda
+export COB_LIBRARY_PATH=${APPDIR}/cobol:/tmp/opt/lib:/tmp/opt/lib/panda
+
 #set -e
 
 kill_daemon() {
@@ -46,14 +50,15 @@ case "$1" in
         #valgrind wfc >> "$WFC_LOG" 2>&1 &
         echo $! > "$WFC_PID"
         sleep 1
-        aps $LDNAME>> "$APS_LOG" 2>&1 &
-        #valgrind --leak-check=full --show-leak-kinds=all aps $LDNAME> "$APS_LOG" 2>&1 &
+        #aps $LDNAME>> "$APS_LOG" 2>&1 &
+        valgrind --leak-check=full --show-leak-kinds=all aps $LDNAME> "$APS_LOG" 2>&1 &
         echo $! > "$APS_PID"
         sleep 1
         glserver -api -auth file:///`pwd`/passwd -screen $SCREENDIR -record $RECORDDIR >> "$GLSERVER_LOG" 2>&1 &
         #valgrind glserver -api -auth file:///`pwd`/passwd -screen $SCREENDIR -record $RECORDDIR >> "$GLSERVER_LOG" 2>&1 &
         echo $! > "$GLSERVER_PID"
         echo "."
+sleep 3600
         ;;
     stop)
         $0 clean
