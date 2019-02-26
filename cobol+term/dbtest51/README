@@ -1,11 +1,12 @@
-# BLOBのアップロードとダウンロードを試すプログラム
+# DBのテーブル操作を行うサンプル
 
-cobol/demo.png をBLOBIMPORTしてクライアントに表示する。
-クライアントからアップロードされた画像(ファイル)をcobol/uploaded.pngにBLOBEXPORTする。
+画面からSELECT,INSERT,UPDATE,DELETEを行う。
 
 ## 準備
 
 $ createdb pandatest
+$ psql < dbtest.sql
+$ /usr/lib/panda/bin/monsetup -dir directory
 
 ## 起動
 
