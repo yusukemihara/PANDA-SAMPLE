@@ -1,8 +1,7 @@
-PATH=/usr/lib/panda/bin:/usr/lib/panda/sbin:$PATH
-export LD_LIBRARY_PATH=/usr/lib/panda/
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
-PATH=/tmp/opt/bin://tmp/opt/sbin:/usr/local/bin:/usr/local/sbin:$PATH
-LD_LIBRARY_PATH=/tmp/opt//lib
+#export PATH=/usr/lib/panda/bin:/usr/lib/panda/sbin:$PATH
+#export LD_LIBRARY_PATH=/usr/lib/panda/
+export PATH=/tmp/opt/bin://tmp/opt/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+export LD_LIBRARY_PATH=/tmp/opt//lib
 LDNAME=test1
 
 if [ "x$LDNAME" = "x" ]; then
@@ -28,7 +27,6 @@ GLSERVER_LOG="$APPDIR/glserver.log"
 APS_PID="$APPDIR/aps.pid"
 WFC_PID="$APPDIR/wfc.pid"
 GLSERVER_PID="$APPDIR/glserver.pid"
-
 
 export COB_LIBRARY_PATH=${APPDIR}/cobol:$HOME/local/lib:/usr/local/lib:/usr/lib:/usr/lib/panda:/opt/panda/lib
 

@@ -56,6 +56,8 @@
            MOVE   LOW-VALUE
                                TO  UPDATA.
            PERFORM 850-SET-PIXMAP2.
+           MOVE   'FILENAME'
+                               TO  FNAME.
            PERFORM 900-PUT-WINDOW.
       **************************************************************************
        900-PUT-WINDOW          SECTION.
@@ -76,8 +78,8 @@
            DISPLAY DB-BLOB-OBJECT.
            MOVE   LOW-VALUE
                                TO  UPDATA.
-           MOVE   ALL SPACE
-                               TO  FNAME.
+      *    MOVE   ALL SPACE
+      *                        TO  FNAME.
            MOVE   DB-BLOB-OBJECT
                                TO  DOWNDATA.
       **************************************************************************
@@ -94,7 +96,7 @@
            DISPLAY DB-BLOB-OBJECT.
            MOVE   LOW-VALUE
                                TO  UPDATA.
-           MOVE   ALL SPACE
-                               TO  FNAME.
+      *    MOVE   ALL SPACE
+      *                        TO  FNAME.
            MOVE   DB-BLOB-OBJECT
                                TO  DOWNDATA.
